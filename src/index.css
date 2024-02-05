@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/subset-Manrope-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/subset-Manrope-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/subset-Manrope-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
