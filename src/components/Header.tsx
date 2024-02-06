@@ -1,10 +1,12 @@
 import { useState } from "react";
+import Category from "./Category";
 
 export default function Header() {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  //   TODO : Fix hamburger menu
   return (
     <header className="bg-very-dark p-6">
-      <div className="flex justify-between">
+      <div className="flex justify-between flex-wrap">
         <button
           aria-expanded={isExpanded}
           onClick={() => setIsExpanded((v) => !v)}
@@ -25,6 +27,7 @@ export default function Header() {
         <a href="">
           <img src="/images/shared/desktop/logo.svg" alt="" />
         </a>
+
         <nav className="hidden desktop:flex">
           <ul className="text-white text-center gap-4 font-bold tracking-widest flex">
             <li>
@@ -61,6 +64,7 @@ export default function Header() {
             </li>
           </ul>
         </nav>
+
         <a href="" className="group">
           <svg
             className="w-6 h-5 group-hover:fill-brown group-focus-visible:fill-brown transition-all"
@@ -74,6 +78,35 @@ export default function Header() {
             />
           </svg>
         </a>
+        <nav
+          className={`${
+            isExpanded ? "flex" : "hidden"
+          } flex-col basis-[100%] desktop:hidden`}
+        >
+          <ul>
+            <li>
+              <Category
+                title="headphones"
+                image="/images/shared/desktop/image-category-thumbnail-headphones.png"
+                link=""
+              />
+            </li>
+            <li>
+              <Category
+                title="headphones"
+                image="/images/shared/desktop/image-category-thumbnail-speakers.png"
+                link=""
+              />
+            </li>
+            <li>
+              <Category
+                title="headphones"
+                image="/images/shared/desktop/image-category-thumbnail-earphones.png"
+                link=""
+              />
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );
