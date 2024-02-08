@@ -93,14 +93,14 @@ export default function Header() {
             </li>
             <li>
               <Category
-                title="headphones"
+                title="speakers"
                 image="/images/shared/desktop/image-category-thumbnail-speakers.png"
                 link=""
               />
             </li>
             <li>
               <Category
-                title="headphones"
+                title="earphones"
                 image="/images/shared/desktop/image-category-thumbnail-earphones.png"
                 link=""
               />
