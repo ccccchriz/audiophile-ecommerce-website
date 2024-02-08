@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <MainLayout>
       <div className="bg-very-dark w-full flex justify-center">
-        <div className="grid place-items-center desktop:grid-cols-2 max-w-[80rem]">
+        <div className="grid place-items-center desktop:grid-cols-[auto_1fr] max-w-[80rem] w-full">
           <picture className="row-[1/2] col-[1/2] desktop:col-[1/3]">
             <source
               media="(min-width: 54rem)"
@@ -17,18 +17,21 @@ export default function Home() {
             />
             <img src="/images/home/mobile/image-header.jpg" alt="" />
           </picture>
-          <div className="row-[1/2] col-[1/2] top-0 grid place-items-center text-center text-white gap-6 p-6 mt-16 max-w-96">
+          <div className="row-[1/2] col-[1/2] top-0 grid place-items-center text-center text-white gap-6 p-6 mt-16 desktop:text-left desktop:justify-items-start">
             <h2 className="uppercase opacity-50 tracking-[0.625rem]">
               New product
             </h2>
-            <h3 className="uppercase tracking-wider text-4xl font-bold">
+            <h3 className="uppercase tracking-wider text-4xl font-bold tablet:text-6xl max-w-[26rem]">
               xx99 mark ii headphones
             </h3>
-            <p>
+            <p className="opacity-75 max-w-96">
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <a href="" className="uppercase py-4 px-8 bg-brown font-bold">
+            <a
+              href=""
+              className="uppercase py-4 px-8 bg-brown font-bold hover:bg-orange focus-visible:bg-orange"
+            >
               See Product
             </a>
           </div>
