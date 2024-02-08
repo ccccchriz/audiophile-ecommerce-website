@@ -35,6 +35,7 @@ export default function Home() {
         </div>
       </div>
       <div className="grid tablet:grid-cols-3 gap-6 py-16 px-6 w-full max-w-[80rem] desktop:px-0">
+        <h2 className="sr-only">Product Categories</h2>
         <Category
           title="headphones"
           image="/images/shared/desktop/image-category-thumbnail-headphones.png"
