@@ -9,7 +9,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <div className="min-h-dvh flex flex-col">
       <Header />
-      <main className="font-primary grow">
+      <main className="font-primary grow bg-very-dark grid place-content-center">
         <h1 className="sr-only">Audiophile Store</h1>
         {children}
       </main>
