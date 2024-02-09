@@ -55,6 +55,28 @@ export default function Home() {
           link=""
         />
       </div>
+      <div className="p-6 w-full max-w-[80rem] desktop:px-0">
+        <div className="flex flex-col items-center text-white text-center gap-6 bg-brown w-full rounded-lg px-6 py-12 bg-[url(/images/home/desktop/pattern-circles.svg)] bg-no-repeat bg-[center_top_-10rem] bg-[length:43rem]">
+          <picture className="max-w-52">
+            <img
+              src="/images/home/mobile/image-speaker-zx9.png"
+              alt=""
+              className="max-w-52"
+            />
+          </picture>
+          <h2 className="font-bold text-4xl max-w-56">ZX9 SPEAKER</h2>
+          <p className="opacity-75 max-w-[22rem]">
+            Upgrade to premium speakers that are phenomenally built to deliver
+            truly remarkable sound.
+          </p>
+          <a
+            href=""
+            className="uppercase bg-very-dark  px-8 py-4 w-max tracking-wider"
+          >
+            See product
+          </a>
+        </div>
+      </div>
     </MainLayout>
   );
 }
