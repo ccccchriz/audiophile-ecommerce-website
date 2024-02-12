@@ -56,8 +56,8 @@ export default function Home() {
         />
       </div>
       <div className="p-6 w-full max-w-[80rem] desktop:px-0">
-        <div className="flex flex-col items-center text-white text-center gap-6 bg-brown w-full rounded-lg px-6 py-12 bg-[url(/images/home/desktop/pattern-circles.svg)] bg-no-repeat bg-[center_top_-10rem] bg-[length:43rem]">
-          <picture className="max-w-52">
+        <div className="flex flex-col items-center text-white text-center gap-6 bg-brown w-full rounded-lg px-6 py-12 bg-[url(/images/home/desktop/pattern-circles.svg)] bg-no-repeat bg-[center_top_-10rem] bg-[length:43rem] desktop:grid desktop:grid-cols-2 desktop:text-left desktop:overflow-hidden">
+          <picture className="max-w-52 desktop:row-[1/4] desktop:self-end desktop:justify-self-center -mb-14">
             <img
               src="/images/home/mobile/image-speaker-zx9.png"
               alt=""
