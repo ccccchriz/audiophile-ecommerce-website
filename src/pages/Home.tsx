@@ -79,7 +79,19 @@ export default function Home() {
           </p>
           <a
             href=""
-            className="uppercase bg-very-dark px-8 py-4 w-max tracking-wider hover:bg-[#4C4C4C] focus-visible:bg-[#4C4C4C]"
+            className="uppercase bg-very-dark px-8 py-4 w-max tracking-wider hover:bg-[#4C4C4C] focus-visible:bg-[#4C4C4C] transition-all"
+          >
+            See product
+          </a>
+        </div>
+      </div>
+
+      <div className="p-6 w-full max-w-[80rem] desktop:px-0">
+        <div className="flex flex-col justify-center gap-4 px-6 rounded-lg bg-[url(/images/home/mobile/image-speaker-zx7.jpg)] bg-no-repeat bg-cover tablet:bg-[url(/images/home/tablet/image-speaker-zx7.jpg)] tablet:px-12 tablet:gap-8 desktop:bg-[url(/images/home/desktop/image-speaker-zx7.jpg)] min-h-[20rem]">
+          <h2 className="font-bold text-4xl max-w-56">ZX7 SPEAKER</h2>
+          <a
+            href=""
+            className="uppercase row-[2/3] col-[1/2] border-x-very-dark border text-very-dark bg-none px-8 py-4 w-max tracking-wider transition-all hover:text-white focus-visible:text-white hover:bg-very-dark focus-visible:bg-very-dark"
           >
             See product
           </a>
