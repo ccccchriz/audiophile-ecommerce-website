@@ -6,7 +6,7 @@ export default function Header() {
   //   TODO : Fix hamburger menu
   return (
     <header className="bg-very-dark p-6 grid place-items-center">
-      <div className="flex justify-between flex-wrap max-w-[80rem] w-full">
+      <div className="flex justify-between flex-wrap max-w-[68rem] w-full">
         <button
           aria-expanded={isExpanded}
           onClick={() => setIsExpanded((v) => !v)}

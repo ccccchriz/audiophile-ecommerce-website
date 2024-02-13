@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <MainLayout>
       <div className="bg-very-dark w-full flex justify-center">
-        <div className="grid place-items-center desktop:grid-cols-[auto_1fr] max-w-[80rem] w-full">
+        <div className="grid place-items-center desktop:grid-cols-[auto_1fr] max-w-[70rem] w-full">
           <picture className="row-[1/2] col-[1/2] desktop:col-[1/3]">
             <source
               media="(min-width: 54rem)"
@@ -37,7 +37,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="grid tablet:grid-cols-3 gap-6 py-16 px-6 w-full max-w-[80rem] desktop:px-0">
+      <div className="grid tablet:grid-cols-3 gap-6 py-16 px-6 w-full max-w-[70rem] desktop:px-0">
         <h2 className="sr-only">Product Categories</h2>
         <Category
           title="headphones"
@@ -55,7 +55,7 @@ export default function Home() {
           link=""
         />
       </div>
-      <div className="p-6 w-full max-w-[80rem] desktop:px-0">
+      <div className="p-6 w-full max-w-[70rem] desktop:px-0">
         <div className="flex flex-col items-center text-white text-center gap-6 bg-brown w-full rounded-lg px-6 py-12 bg-[url(/images/home/desktop/pattern-circles.svg)] bg-no-repeat bg-[center_top_-10rem] bg-[length:43rem] desktop:grid desktop:grid-cols-2 desktop:text-left desktop:overflow-hidden">
           <picture className="max-w-52 desktop:row-[1/4] desktop:self-end desktop:justify-self-center desktop:-mb-14">
             <source
@@ -85,7 +85,7 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <div className="p-6 w-full max-w-[80rem] desktop:px-0">
+      <div className="p-6 w-full max-w-[70rem] desktop:px-0">
         <div className="flex flex-col justify-center gap-4 px-6 rounded-lg bg-[url(/images/home/mobile/image-speaker-zx7.jpg)] bg-no-repeat bg-cover tablet:bg-[url(/images/home/tablet/image-speaker-zx7.jpg)] tablet:px-12 tablet:gap-8 desktop:bg-[url(/images/home/desktop/image-speaker-zx7.jpg)] min-h-[20rem]">
           <h2 className="font-bold text-4xl">ZX7 SPEAKER</h2>
           <a
@@ -96,7 +96,7 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <div className="grid tablet:grid-cols-2 gap-6 tablet:gap-12 p-6 w-full max-w-[80rem] desktop:px-0">
+      <div className="grid tablet:grid-cols-2 gap-6 tablet:gap-12 p-6 w-full max-w-[70rem] desktop:px-0">
         <picture className="rounded-lg overflow-hidden object-cover min-h-[12.5rem]">
           <source
             media="(min-width: 54rem)"
