@@ -108,7 +108,7 @@ export default function Home() {
           />
           <img src="/images/home/mobile/image-earphones-yx1.jpg" alt="" />
         </picture>
-        <div className="flex flex-col justify-center gap-4 px-6 rounded-lg bg-gray w-full min-h-[12.5rem]">
+        <div className="flex flex-col justify-center gap-4 desktop:gap-12 desktop:px-12 px-6 rounded-lg bg-gray w-full min-h-[12.5rem]">
           <h2 className="font-bold text-4xl">YX1 EARPHONES</h2>
           <a
             href=""
