@@ -1,3 +1,4 @@
+import AdCard from "../components/AdCard";
 import Category from "../components/Category";
 import MainLayout from "../layouts/MainLayout";
 
@@ -118,6 +119,7 @@ export default function Home() {
           </a>
         </div>
       </div>
+      <AdCard />
     </MainLayout>
   );
 }
