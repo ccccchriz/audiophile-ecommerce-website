@@ -1,7 +1,7 @@
 export default function AdCard() {
   return (
     <>
-      <div className="grid desktop:grid-cols-2 gap-6 p-6 w-full max-w-[70rem] desktop:px-0 my-12 desktop:gap-x-24">
+      <div className="grid desktop:grid-cols-2 gap-6 p-6 w-full max-w-[70rem] my-12 desktop:gap-x-24">
         <picture className="desktop:row-[1/3] desktop:col-[2/3] rounded-lg overflow-hidden">
           <source
             media="(min-width: 54rem)"
