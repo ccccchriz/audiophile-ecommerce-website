@@ -7,7 +7,7 @@ export default function Home() {
     <MainLayout>
       <div className="bg-very-dark w-full flex justify-center">
         <div className="grid place-items-center desktop:grid-cols-[auto_1fr] max-w-[70rem] w-full">
-          <picture className="row-[1/2] col-[1/2] desktop:col-[1/3]">
+          <picture className="row-[1/2] col-[1/2] desktop:col-[1/3] border-t border-t-white border-opacity-20">
             <source
               media="(min-width: 54rem)"
               srcSet="/images/home/desktop/image-hero.jpg"

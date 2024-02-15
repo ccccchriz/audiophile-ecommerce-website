@@ -13,7 +13,7 @@ export default function AdCard() {
           />
           <img src="/images/shared/mobile/image-best-gear.jpg" alt="" />
         </picture>
-        <h2 className="uppercase font-bold text-3xl desktop:self-end text-center desktop:text-left">
+        <h2 className="uppercase font-bold text-3xl desktop:self-end text-center desktop:text-left desktop:text-4xl">
           Bringing you the <span className="text-brown">best</span> audio gear
         </h2>
         <p className="opacity-50 text-center desktop:text-left">

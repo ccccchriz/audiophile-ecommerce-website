@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="bg-very-dark grid justify-center">
-      <div className="h-1 grid place-items-center tablet:justify-items-start tablet:pl-16 desktop:max-w-[70rem]">
+      <div className="h-1 grid place-items-center tablet:justify-items-start tablet:pl-6 desktop:max-w-[70rem]">
         <div className="bg-brown h-full w-28"></div>
       </div>
       <div className="grid place-items-center gap-8 px-6 py-10 font-primary tablet:grid-cols-[1fr_auto] tablet:py-16 tablet:justify-items-start desktop:max-w-[70rem] desktop:gap-x-32 desktop:py-8">
