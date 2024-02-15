@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Category from "./Category";
+import CategoryCard from "./CategoryCard";
 
 export default function Header() {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
@@ -85,21 +85,21 @@ export default function Header() {
         >
           <ul>
             <li>
-              <Category
+              <CategoryCard
                 title="headphones"
                 image="/images/shared/desktop/image-category-thumbnail-headphones.png"
                 link=""
               />
             </li>
             <li>
-              <Category
+              <CategoryCard
                 title="speakers"
                 image="/images/shared/desktop/image-category-thumbnail-speakers.png"
                 link=""
               />
             </li>
             <li>
-              <Category
+              <CategoryCard
                 title="earphones"
                 image="/images/shared/desktop/image-category-thumbnail-earphones.png"
                 link=""

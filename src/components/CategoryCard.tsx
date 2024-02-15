@@ -1,10 +1,14 @@
-interface CategoryProps {
+interface CategoryCardProps {
   image: string;
   title: string;
   link: string;
 }
 
-export default function Category({ image, title, link }: CategoryProps) {
+export default function CategoryCard({
+  image,
+  title,
+  link,
+}: CategoryCardProps) {
   return (
     <a
       href={link}

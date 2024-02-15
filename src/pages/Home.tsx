@@ -1,5 +1,5 @@
 import AdCard from "../components/AdCard";
-import Category from "../components/Category";
+import CategoryCard from "../components/CategoryCard";
 import MainLayout from "../layouts/MainLayout";
 
 export default function Home() {
@@ -40,17 +40,17 @@ export default function Home() {
       </div>
       <div className="grid tablet:grid-cols-3 gap-6 py-16 px-6 w-full max-w-[70rem]">
         <h2 className="sr-only">Product Categories</h2>
-        <Category
+        <CategoryCard
           title="headphones"
           image="/images/shared/desktop/image-category-thumbnail-headphones.png"
           link=""
         />
-        <Category
+        <CategoryCard
           title="speakers"
           image="/images/shared/desktop/image-category-thumbnail-speakers.png"
           link=""
         />
-        <Category
+        <CategoryCard
           title="earphones"
           image="/images/shared/desktop/image-category-thumbnail-earphones.png"
           link=""
