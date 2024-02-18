@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CategoryCard from "./CategoryCard";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
@@ -39,28 +40,28 @@ export default function Header() {
               </a>
             </li>
             <li>
-              <a
-                href=""
+              <Link
+                to="/category/headphones"
                 className="hover:text-brown focus-visible:text-brown transition-all"
               >
                 HEADPHONES
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href=""
+              <Link
+                to="/category/speakers"
                 className="hover:text-brown focus-visible:text-brown transition-all"
               >
                 SPEAKERS
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href=""
+              <Link
+                to="/category/earphones"
                 className="hover:text-brown focus-visible:text-brown transition-all"
               >
                 EARPHONES
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -88,21 +89,18 @@ export default function Header() {
               <CategoryCard
                 title="headphones"
                 image="/images/shared/desktop/image-category-thumbnail-headphones.png"
-                link=""
               />
             </li>
             <li>
               <CategoryCard
                 title="speakers"
                 image="/images/shared/desktop/image-category-thumbnail-speakers.png"
-                link=""
               />
             </li>
             <li>
               <CategoryCard
                 title="earphones"
                 image="/images/shared/desktop/image-category-thumbnail-earphones.png"
-                link=""
               />
             </li>
           </ul>

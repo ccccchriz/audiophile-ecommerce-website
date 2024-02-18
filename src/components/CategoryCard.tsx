@@ -1,17 +1,14 @@
+import { Link } from "react-router-dom";
+
 interface CategoryCardProps {
   image: string;
   title: string;
-  link: string;
 }
 
-export default function CategoryCard({
-  image,
-  title,
-  link,
-}: CategoryCardProps) {
+export default function CategoryCard({ image, title }: CategoryCardProps) {
   return (
-    <a
-      href={link}
+    <Link
+      to={`/category/${title}`}
       className="group bg-gray flex flex-col justify-end items-center uppercase mt-20 rounded-lg p-4 max-h-40 w-full hover:bg-opacity-50 focus-visible:bg-opacity-50"
     >
       <img src={image} alt="" className="max-w-40 -mt-20 " />
@@ -27,6 +24,6 @@ export default function CategoryCard({
           className="h-[0.625rem]"
         />
       </span>
-    </a>
+    </Link>
   );
 }

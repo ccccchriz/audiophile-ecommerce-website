@@ -43,17 +43,14 @@ export default function Home() {
         <CategoryCard
           title="headphones"
           image="/images/shared/desktop/image-category-thumbnail-headphones.png"
-          link=""
         />
         <CategoryCard
           title="speakers"
           image="/images/shared/desktop/image-category-thumbnail-speakers.png"
-          link=""
         />
         <CategoryCard
           title="earphones"
           image="/images/shared/desktop/image-category-thumbnail-earphones.png"
-          link=""
         />
       </div>
       <div className="p-6 w-full max-w-[70rem]">

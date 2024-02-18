@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer className="bg-very-dark grid justify-center">
@@ -20,28 +22,28 @@ export default function Footer() {
             </a>
           </li>
           <li>
-            <a
-              href=""
+            <Link
+              to="/category/headphones"
               className="hover:text-brown focus-visible:text-brown transition-all"
             >
               HEADPHONES
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href=""
+            <Link
+              to="/category/speakers"
               className="hover:text-brown focus-visible:text-brown transition-all"
             >
               SPEAKERS
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href=""
+            <Link
+              to="/category/earphones"
               className="hover:text-brown focus-visible:text-brown transition-all"
             >
               EARPHONES
-            </a>
+            </Link>
           </li>
         </ul>
         <p className="text-white opacity-50 text-center tablet:col-[1/3] desktop:col-auto tablet:text-left">
