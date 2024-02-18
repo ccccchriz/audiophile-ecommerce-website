@@ -4,7 +4,7 @@ import MainLayout from "../layouts/MainLayout";
 
 export default function Home() {
   return (
-    <MainLayout>
+    <>
       <div className="bg-very-dark w-full flex justify-center">
         <div className="grid place-items-center desktop:grid-cols-[auto_1fr] max-w-[70rem] w-full">
           <picture className="row-[1/2] col-[1/2] desktop:col-[1/3] border-t border-t-white border-opacity-20">
@@ -120,6 +120,6 @@ export default function Home() {
         </div>
       </div>
       <AdCard />
-    </MainLayout>
+    </>
   );
 }
