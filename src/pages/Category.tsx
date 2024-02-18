@@ -7,20 +7,37 @@ export default function Catergory() {
   let category = useParams().category;
   return (
     <>
-      <div className="grid gap-16 p-4">
+      <div className="grid gap-16 p-4 max-w-[70rem] my-12">
         <h2 className="sr-only capitalize">{category}</h2>
 
         {data
           .filter((el) => el.category == category)
           .reverse()
-          .map((el) => (
-            <div key={el.slug} className="grid gap-4 place-items-center">
-              <picture>
-                <source media="(min-width: 54rem)" srcSet={el.image.desktop} />
-                <source media="(min-width: 34rem)" srcSet={el.image.tablet} />
-                <img src={el.image.mobile} alt="" />
+          .map((el, index) => (
+            <div
+              key={el.slug}
+              className="grid gap-4 place-items-center desktop:grid-cols-2 desktop:gap-12"
+            >
+              <picture
+                className={`${
+                  index % 2 == 1 && "desktop:col-[2/3]"
+                } rounded-lg overflow-hidden`}
+              >
+                <source
+                  media="(min-width: 54rem)"
+                  srcSet={el.categoryImage.desktop}
+                />
+                <source
+                  media="(min-width: 34rem)"
+                  srcSet={el.categoryImage.tablet}
+                />
+                <img src={el.categoryImage.mobile} alt="" />
               </picture>
-              <div className="text-center grid gap-6 place-items-center">
+              <div
+                className={`${
+                  index % 2 == 1 && "desktop:row-[1/2]"
+                } text-center grid gap-6 place-items-center`}
+              >
                 {el.new && (
                   <p
                     aria-hidden={true}
