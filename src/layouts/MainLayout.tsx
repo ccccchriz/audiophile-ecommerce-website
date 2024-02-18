@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -9,6 +9,7 @@ import Header from "../components/Header";
 export default function MainLayout(/*{ children }: MainLayoutProps*/) {
   return (
     <div className="min-h-dvh flex flex-col">
+      <ScrollRestoration />
       <Header />
       <main className="font-primary grow grid place-items-center">
         <h1 className="sr-only">Audiophile Store</h1>
