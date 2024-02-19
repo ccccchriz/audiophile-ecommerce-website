@@ -1,13 +1,25 @@
-import { Link, useParams, useRouteLoaderData } from "react-router-dom";
+import {
+  Link,
+  useNavigate,
+  useParams,
+  useRouteLoaderData,
+} from "react-router-dom";
 import AdCard from "../components/AdCard";
 import dataType from "../utilities/dataType";
 
 export default function Catergory() {
   const data = useRouteLoaderData("root") as dataType;
   let product = useParams().product;
+  let navigate = useNavigate();
   return (
     <>
-      <div className="grid gap-16 p-4 max-w-[70rem] my-12">
+      <div className="grid gap-4 p-4 max-w-[70rem] mb-12">
+        <button
+          className="justify-self-start opacity-50"
+          onClick={() => navigate(-1)}
+        >
+          Go Back
+        </button>
         {data
           .filter((el) => el.slug == product || `${el.id}` == product)
           .map((el) => (
