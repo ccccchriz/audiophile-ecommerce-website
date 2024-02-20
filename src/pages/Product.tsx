@@ -69,7 +69,7 @@ export default function Catergory() {
                     </p>
                   ))}
                 </div>
-                <div className="grid gap-4">
+                <div className="grid gap-4 tablet:grid-cols-2">
                   <h3 className="uppercase font-bold text-2xl">In the box</h3>
                   <ul className="grid gap-2">
                     {el.includes.map((el, index) => (
@@ -82,8 +82,10 @@ export default function Catergory() {
                     ))}
                   </ul>
                 </div>
-                <div className="grid gap-4">
-                  <picture className={`rounded-lg overflow-hidden`}>
+                <div className="grid gap-4 tablet:grid-cols-[5fr_7fr]">
+                  <picture
+                    className={`rounded-lg overflow-hidden object-cover`}
+                  >
                     <source
                       media="(min-width: 54rem)"
                       srcSet={el.gallery.first.desktop}
@@ -94,7 +96,9 @@ export default function Catergory() {
                     />
                     <img src={el.gallery.first.mobile} alt="" />
                   </picture>
-                  <picture className={`rounded-lg overflow-hidden`}>
+                  <picture
+                    className={`rounded-lg overflow-hidden object-cover`}
+                  >
                     <source
                       media="(min-width: 54rem)"
                       srcSet={el.gallery.second.desktop}
@@ -105,7 +109,9 @@ export default function Catergory() {
                     />
                     <img src={el.gallery.second.mobile} alt="" />
                   </picture>
-                  <picture className={`rounded-lg overflow-hidden`}>
+                  <picture
+                    className={`rounded-lg overflow-hidden tablet:col-[2/3] tablet:row-[1/3]`}
+                  >
                     <source
                       media="(min-width: 54rem)"
                       srcSet={el.gallery.third.desktop}
@@ -117,32 +123,37 @@ export default function Catergory() {
                     <img src={el.gallery.third.mobile} alt="" />
                   </picture>
                 </div>
-                <div className="grid gap-12 place-items-center">
+                <div className="grid gap-4 place-items-center">
                   <h3 className="uppercase font-bold text-2xl">
                     You may also like
                   </h3>
-                  {el.others.map((el, index) => (
-                    <div className="grid gap-4 place-items-center" key={index}>
-                      <picture className={`rounded-lg overflow-hidden`}>
-                        <source
-                          media="(min-width: 54rem)"
-                          srcSet={el.image.desktop}
-                        />
-                        <source
-                          media="(min-width: 34rem)"
-                          srcSet={el.image.tablet}
-                        />
-                        <img src={el.image.mobile} alt="" />
-                      </picture>
-                      <h4 className="text-2xl font-bold">{el.name}</h4>
-                      <Link
-                        className="bg-brown text-white py-4 px-8 uppercase tracking-widest"
-                        to={`/product/${el.slug}`}
+                  <div className="grid gap-12 grid-cols-3">
+                    {el.others.map((el, index) => (
+                      <div
+                        className="grid gap-4 place-items-center"
+                        key={index}
                       >
-                        See product
-                      </Link>
-                    </div>
-                  ))}
+                        <picture className={`rounded-lg overflow-hidden`}>
+                          <source
+                            media="(min-width: 54rem)"
+                            srcSet={el.image.desktop}
+                          />
+                          <source
+                            media="(min-width: 34rem)"
+                            srcSet={el.image.tablet}
+                          />
+                          <img src={el.image.mobile} alt="" />
+                        </picture>
+                        <h4 className="text-2xl font-bold">{el.name}</h4>
+                        <Link
+                          className="bg-brown text-white py-4 px-8 uppercase tracking-widest"
+                          to={`/product/${el.slug}`}
+                        >
+                          See product
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </>
