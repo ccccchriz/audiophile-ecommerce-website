@@ -1,16 +1,19 @@
-import { useState } from "react";
 import CategoryCard from "./CategoryCard";
 import { Link } from "react-router-dom";
 
-export default function Header() {
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+type HeaderProps = {
+  isExpanded: boolean;
+  setIsExpanded: Function;
+};
+
+export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
   //   TODO : Fix hamburger menu
   return (
     <header className="bg-very-dark p-6 grid justify-items-center">
       <div className="flex justify-between flex-wrap max-w-[70rem] w-full">
         <button
           aria-expanded={isExpanded}
-          onClick={() => setIsExpanded((v) => !v)}
+          onClick={() => setIsExpanded((v: boolean) => !v)}
           className="group desktop:hidden"
         >
           <svg
