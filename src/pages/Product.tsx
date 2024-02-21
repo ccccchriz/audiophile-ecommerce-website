@@ -127,7 +127,7 @@ export default function Catergory() {
                   <h3 className="uppercase font-bold text-2xl">
                     You may also like
                   </h3>
-                  <div className="grid gap-12 grid-cols-3">
+                  <div className="grid gap-12 tablet:grid-cols-3">
                     {el.others.map((el, index) => (
                       <div
                         className="grid gap-4 place-items-center"
