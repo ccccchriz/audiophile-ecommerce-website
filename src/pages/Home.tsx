@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AdCard from "../components/AdCard";
 import CategoryCard from "../components/CategoryCard";
 import MainLayout from "../layouts/MainLayout";
@@ -29,12 +30,12 @@ export default function Home() {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <a
-              href=""
+            <Link
+              to={"/product/xx99-mark-two-headphones"}
               className="uppercase py-4 px-8 bg-brown font-bold hover:bg-orange focus-visible:bg-orange"
             >
               See Product
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -75,23 +76,23 @@ export default function Home() {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <a
-            href=""
+          <Link
+            to={"/product/zx9-speaker"}
             className="uppercase bg-very-dark px-8 py-4 w-max tracking-wider hover:bg-[#4C4C4C] focus-visible:bg-[#4C4C4C] transition-all"
           >
             See product
-          </a>
+          </Link>
         </div>
       </div>
       <div className="p-6 w-full max-w-[70rem]">
         <div className="flex flex-col justify-center gap-4 px-6 rounded-lg bg-[url(/images/home/mobile/image-speaker-zx7.jpg)] bg-no-repeat bg-cover tablet:bg-[url(/images/home/tablet/image-speaker-zx7.jpg)] tablet:px-12 tablet:gap-8 desktop:bg-[url(/images/home/desktop/image-speaker-zx7.jpg)] min-h-[20rem]">
           <h2 className="font-bold text-4xl">ZX7 SPEAKER</h2>
-          <a
-            href=""
+          <Link
+            to={"/product/zx7-speaker"}
             className="uppercase row-[2/3] col-[1/2] border-x-very-dark border text-very-dark bg-none px-8 py-4 w-max tracking-wider transition-all hover:text-white focus-visible:text-white hover:bg-very-dark focus-visible:bg-very-dark"
           >
             See product
-          </a>
+          </Link>
         </div>
       </div>
       <div className="grid tablet:grid-cols-2 gap-6 tablet:gap-12 p-6 w-full max-w-[70rem]">
@@ -108,12 +109,12 @@ export default function Home() {
         </picture>
         <div className="flex flex-col justify-center gap-4 desktop:gap-12 desktop:px-12 px-6 rounded-lg bg-gray w-full min-h-[12.5rem]">
           <h2 className="font-bold text-4xl">YX1 EARPHONES</h2>
-          <a
-            href=""
+          <Link
+            to={"/product/yx1-earphones"}
             className="uppercase border-x-very-dark border text-very-dark bg-none px-8 py-4 w-max tracking-wider transition-all hover:text-white focus-visible:text-white hover:bg-very-dark focus-visible:bg-very-dark"
           >
             See product
-          </a>
+          </Link>
         </div>
       </div>
       <AdCard />
