@@ -1,4 +1,4 @@
-import { useParams, useRouteLoaderData } from "react-router-dom";
+import { Link, useParams, useRouteLoaderData } from "react-router-dom";
 import AdCard from "../components/AdCard";
 import dataType from "../utilities/dataType";
 
@@ -48,12 +48,12 @@ export default function Catergory() {
                 )}
                 <h3 className="uppercase font-bold text-3xl">{el.name}</h3>
                 <p className="opacity-50">{el.description}</p>
-                <a
-                  href=""
+                <Link
+                  to={`/product/${el.slug}`}
                   className="px-6 py-4 bg-brown text-white w-max uppercase font-bold tracking-wider"
                 >
                   See product
-                </a>
+                </Link>
               </div>
             </div>
           ))}
