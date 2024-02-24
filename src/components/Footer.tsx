@@ -21,12 +21,12 @@ export default function Footer({ isExpanded }: FooterProps) {
         />
         <ul className="text-white text-center flex flex-col gap-4 font-bold tracking-widest tablet:col-[1/3] desktop:col-auto tablet:flex-row">
           <li>
-            <a
-              href=""
+            <Link
+              to={"/"}
               className="hover:text-brown focus-visible:text-brown transition-all"
             >
               HOME
-            </a>
+            </Link>
           </li>
           <li>
             <Link

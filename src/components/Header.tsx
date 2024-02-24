@@ -28,19 +28,20 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
             </g>
           </svg>
         </button>
-        <a href="">
+
+        <Link to={"/"}>
           <img src="/images/shared/desktop/logo.svg" alt="" />
-        </a>
+        </Link>
 
         <nav className="hidden desktop:flex">
           <ul className="text-white text-center gap-4 font-bold tracking-widest flex">
             <li>
-              <a
-                href=""
+              <Link
+                to={"/"}
                 className="hover:text-brown focus-visible:text-brown transition-all"
               >
                 HOME
-              </a>
+              </Link>
             </li>
             <li>
               <Link
