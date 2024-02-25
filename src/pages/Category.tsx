@@ -7,9 +7,10 @@ export default function Catergory() {
   let category = useParams().category;
   return (
     <>
+      <h2 className="bg-black text-white text-2xl font-bold w-full flex justify-center py-12 uppercase tracking-widest desktop:text-4xl desktop:py-20">
+        {category}
+      </h2>
       <div className="grid gap-16 p-4 max-w-[70rem] my-12">
-        <h2 className="sr-only capitalize">{category}</h2>
-
         {data
           .filter((el) => el.category == category)
           .reverse()
@@ -36,7 +37,7 @@ export default function Catergory() {
               <div
                 className={`${
                   index % 2 == 1 && "desktop:row-[1/2]"
-                } text-center grid gap-6 place-items-center`}
+                } text-center grid gap-6 place-items-center desktop:text-left desktop:justify-items-start`}
               >
                 {el.new && (
                   <p
