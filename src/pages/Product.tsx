@@ -73,7 +73,7 @@ export default function Catergory() {
                         +
                       </button>
                     </div>
-                    <button className="bg-brown text-white py-4 px-8 ">
+                    <button className="bg-brown text-white py-4 px-8 hover:bg-orange focus-visible:bg-orange">
                       Add to Cart
                     </button>
                   </div>
