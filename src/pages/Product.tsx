@@ -13,7 +13,7 @@ export default function Catergory() {
   let product = useParams().product;
   let navigate = useNavigate();
 
-  const [ammount, setAmmount] = useState(1);
+  const [amount, setAmount] = useState(1);
 
   return (
     <>
@@ -56,16 +56,16 @@ export default function Catergory() {
                     <div className="flex gap-4">
                       <div className="flex items-center gap-4 bg-gray">
                         <button
-                          disabled={ammount < 2 ? true : undefined}
+                          disabled={amount < 2 ? true : undefined}
                           className="p-4 font-bold  text-xl h-full disabled:opacity-35 [&:not(:disabled)]:hover:text-brown [&:not(:disabled)]:focus-visible:text-brown [&:not(:disabled)]:hover:bg-light-gray [&:not(:disabled)]:focus-visible:bg-light-gray transition-all"
-                          onClick={() => setAmmount((v) => v - 1)}
+                          onClick={() => setAmount((v) => v - 1)}
                         >
                           -
                         </button>
-                        <p className="px-2">{ammount}</p>
+                        <p className="px-2">{amount}</p>
                         <button
                           className="p-4 h-full font-bold hover:text-brown focus-visible:text-brown hover:bg-light-gray focus-visible:bg-light-gray transition-all "
-                          onClick={() => setAmmount((v) => v + 1)}
+                          onClick={() => setAmount((v) => v + 1)}
                         >
                           +
                         </button>
