@@ -1,10 +1,18 @@
 import { Link, useParams, useRouteLoaderData } from "react-router-dom";
 import AdCard from "../components/AdCard";
 import dataType from "../utilities/dataType";
+import { useEffect } from "react";
 
 export default function Catergory() {
   const data = useRouteLoaderData("root") as dataType;
   let category = useParams().category;
+
+  useEffect(() => {
+    document.title = `${
+      category![0].toUpperCase() + category!.slice(1)
+    } | Audiophile e-commerce website`;
+  }, [category]);
+
   return (
     <>
       <h2 className="bg-black text-white text-2xl font-bold w-full flex justify-center py-12 uppercase tracking-widest desktop:text-4xl desktop:py-20">

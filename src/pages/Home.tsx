@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import AdCard from "../components/AdCard";
 import CategoryCard from "../components/CategoryCard";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    document.title = "Home | Audiophile e-commerce website";
+  }, []);
+
   return (
     <>
       <div className="bg-very-dark w-full flex justify-center">
