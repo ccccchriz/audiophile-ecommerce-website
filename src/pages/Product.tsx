@@ -157,7 +157,7 @@ export default function Catergory() {
                       </picture>
                       <h4 className="text-2xl font-bold">{el.name}</h4>
                       <Link
-                        className="bg-brown text-white py-4 px-8 uppercase tracking-widest"
+                        className="bg-brown text-white py-4 px-8 uppercase tracking-widest hover:bg-orange focus-visible:bg-orange"
                         to={`/product/${el.slug}`}
                       >
                         See product
