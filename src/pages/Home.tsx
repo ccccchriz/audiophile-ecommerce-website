@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import AdCard from "../components/AdCard";
 import CategoryCard from "../components/CategoryCard";
-import MainLayout from "../layouts/MainLayout";
 
 export default function Home() {
   return (
