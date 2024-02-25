@@ -50,7 +50,7 @@ export default function Catergory() {
                 <p className="opacity-50">{el.description}</p>
                 <Link
                   to={`/product/${el.slug}`}
-                  className="px-6 py-4 bg-brown text-white w-max uppercase font-bold tracking-wider"
+                  className="px-6 py-4 bg-brown text-white w-max uppercase font-bold tracking-wider hover:bg-orange focus-visible:bg-orange"
                 >
                   See product
                 </Link>
