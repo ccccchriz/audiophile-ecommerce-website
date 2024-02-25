@@ -6,11 +6,15 @@ import {
 } from "react-router-dom";
 import AdCard from "../components/AdCard";
 import dataType from "../utilities/dataType";
+import { useState } from "react";
 
 export default function Catergory() {
   const data = useRouteLoaderData("root") as dataType;
   let product = useParams().product;
   let navigate = useNavigate();
+
+  const [ammount, setAmmount] = useState(1);
+
   return (
     <>
       <div className="grid gap-4 p-4 max-w-[70rem] mb-12">
@@ -50,12 +54,23 @@ export default function Catergory() {
                     <p>{el.description}</p>
                     <p className="text-lg font-bold">$ {el.price}</p>
                     <div className="flex gap-4">
-                      <div className="flex gap-4 p-4 bg-gray">
-                        <button>-</button>
-                        <p className="px-4">1</p>
-                        <button>+</button>
+                      <div className="flex items-center gap-4 bg-gray">
+                        <button
+                          disabled={ammount < 2 ? true : undefined}
+                          className="p-4 font-bold  text-xl h-full disabled:opacity-35 [&:not(:disabled)]:hover:text-brown [&:not(:disabled)]:focus-visible:text-brown [&:not(:disabled)]:hover:bg-light-gray [&:not(:disabled)]:focus-visible:bg-light-gray transition-all"
+                          onClick={() => setAmmount((v) => v - 1)}
+                        >
+                          -
+                        </button>
+                        <p className="px-2">{ammount}</p>
+                        <button
+                          className="p-4 h-full font-bold hover:text-brown focus-visible:text-brown hover:bg-light-gray focus-visible:bg-light-gray transition-all "
+                          onClick={() => setAmmount((v) => v + 1)}
+                        >
+                          +
+                        </button>
                       </div>
-                      <button className="bg-brown text-white py-4 px-8">
+                      <button className="bg-brown text-white py-4 px-8 ">
                         Add to Cart
                       </button>
                     </div>
