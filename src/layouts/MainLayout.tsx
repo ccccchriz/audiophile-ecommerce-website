@@ -1,7 +1,7 @@
-import { Outlet, ScrollRestoration } from "react-router-dom";
+import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // interface MainLayoutProps {
 //   children: React.ReactNode;
@@ -9,6 +9,11 @@ import { useState } from "react";
 
 export default function MainLayout(/*{ children }: MainLayoutProps*/) {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsExpanded((_) => false);
+  }, [location]);
   return (
     <div className="min-h-dvh flex flex-col">
       <ScrollRestoration />

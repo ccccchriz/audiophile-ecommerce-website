@@ -1,5 +1,6 @@
+import { useEffect, useRef } from "react";
 import CategoryCard from "./CategoryCard";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 type HeaderProps = {
   isExpanded: boolean;
@@ -7,13 +8,21 @@ type HeaderProps = {
 };
 
 export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
-  //   TODO : Fix hamburger menu
+  const dialog = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    if (!isExpanded) dialog.current!.close();
+  }, [isExpanded]);
+
   return (
     <header className="bg-very-dark p-6 grid justify-items-center">
       <div className="flex justify-between flex-wrap max-w-[70rem] w-full">
         <button
           aria-expanded={isExpanded}
-          onClick={() => setIsExpanded((v: boolean) => !v)}
+          onClick={() => {
+            dialog.current!.showModal();
+            setIsExpanded((v: boolean) => !v);
+          }}
           className="group desktop:hidden"
         >
           <svg
@@ -83,11 +92,24 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
             />
           </svg>
         </a>
-        <nav
-          className={`${
-            isExpanded ? "flex" : "hidden"
-          } flex-col basis-[100%] desktop:hidden`}
-        >
+        <dialog ref={dialog} className={`desktop:hidden w-full p-4 rounded-lg`}>
+          <button
+            type="button"
+            onClick={() => {
+              dialog.current!.close();
+              setIsExpanded((v: boolean) => !v);
+            }}
+            className="p-3 size-12 group self-end ml-auto"
+          >
+            <div className="sr-only">Close menu</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+              className="group-hover:fill-brown group-focus-visible:fill-brown"
+            >
+              <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+            </svg>
+          </button>
           <ul>
             <li>
               <CategoryCard
@@ -108,7 +130,7 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
               />
             </li>
           </ul>
-        </nav>
+        </dialog>
       </div>
     </header>
   );
