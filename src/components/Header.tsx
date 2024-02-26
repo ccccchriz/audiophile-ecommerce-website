@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import CategoryCard from "./CategoryCard";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 type HeaderProps = {
   isExpanded: boolean;
@@ -15,7 +15,7 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
   }, [isExpanded]);
 
   return (
-    <header className="bg-very-dark p-6 grid justify-items-center">
+    <header className="bg-black p-6 grid justify-items-center">
       <div className="flex justify-between flex-wrap max-w-[70rem] w-full">
         <button
           aria-expanded={isExpanded}

@@ -7,7 +7,7 @@ type FooterProps = {
 export default function Footer({ isExpanded }: FooterProps) {
   return (
     <footer
-      className="bg-very-dark grid justify-center"
+      className="bg-black grid justify-center"
       {...{ inert: isExpanded ? "" : null }}
     >
       <div className="h-1 grid place-items-center tablet:justify-items-start tablet:pl-6 desktop:max-w-[70rem]">
