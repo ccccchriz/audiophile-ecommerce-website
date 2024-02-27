@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import CategoryCard from "./CategoryCard";
 import { Link } from "react-router-dom";
 
@@ -9,6 +9,9 @@ type HeaderProps = {
 
 export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
   const dialog = useRef<HTMLDialogElement>(null);
+  const cart = useRef<HTMLDialogElement>(null);
+
+  const [isCartExpanded, setIsCartExpanded] = useState<boolean>(false);
 
   useEffect(() => {
     if (!isExpanded) dialog.current!.close();
@@ -79,7 +82,7 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
           </ul>
         </nav>
 
-        <a href="" className="group">
+        <button type="button" onClick={() => cart.current?.showModal()}>
           <svg
             className="w-6 h-5 group-hover:fill-brown group-focus-visible:fill-brown transition-all"
             xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +94,7 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
               fillRule="nonzero"
             />
           </svg>
-        </a>
+        </button>
         <dialog ref={dialog} className={`desktop:hidden w-full p-4 rounded-lg`}>
           <button
             type="button"
@@ -99,7 +102,7 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
               dialog.current!.close();
               setIsExpanded((v: boolean) => !v);
             }}
-            className="p-3 size-12 group self-end ml-auto"
+            className="p-3 w-12 group self-end ml-auto"
           >
             <div className="sr-only">Close menu</div>
             <svg
@@ -130,6 +133,50 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
               />
             </li>
           </ul>
+        </dialog>
+        <dialog
+          ref={cart}
+          className="mt-24 max-w-[70rem] bg-[transparent] w-full"
+        >
+          <div className="w-full grid desktop:grid-cols-2">
+            <div className="grid w-full p-6 desktop:col-[2/3] bg-white rounded-lg">
+              <button
+                type="button"
+                onClick={() => {
+                  cart.current!.close();
+                  setIsCartExpanded((v: boolean) => !v);
+                }}
+                className="p-3 w-12 group ml-auto self-end"
+              >
+                <div className="sr-only">Close menu</div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 384 512"
+                  className="group-hover:fill-brown group-focus-visible:fill-brown"
+                >
+                  <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                </svg>
+              </button>
+              <div className="flex">
+                <h2>CART</h2>
+                <p>
+                  (<span>1</span>)
+                </p>
+                <button type="button" className="ml-auto">
+                  Remove All
+                </button>
+              </div>
+              <div className="">
+                <p className="flex justify-between">
+                  <span>Total</span>
+                  <span>$5325</span>
+                </p>
+              </div>
+              <button type="button" className="bg-brown w-full">
+                Checkout
+              </button>
+            </div>
+          </div>
         </dialog>
       </div>
     </header>
