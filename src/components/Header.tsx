@@ -17,6 +17,10 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
     if (!isExpanded) dialog.current!.close();
   }, [isExpanded]);
 
+  useEffect(() => {
+    if (!isCartExpanded) dialog.current!.close();
+  }, [isCartExpanded]);
+
   return (
     <header className="bg-black p-6 grid justify-items-center">
       <div className="flex justify-between flex-wrap max-w-[70rem] w-full">
@@ -82,7 +86,11 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
           </ul>
         </nav>
 
-        <button type="button" onClick={() => cart.current?.showModal()}>
+        <button
+          type="button"
+          onClick={() => cart.current?.showModal()}
+          className="group"
+        >
           <svg
             className="w-6 h-5 group-hover:fill-brown group-focus-visible:fill-brown transition-all"
             xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +146,7 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
           ref={cart}
           className="mt-24 max-w-[70rem] bg-[transparent] w-full"
         >
-          <div className="w-full grid desktop:grid-cols-2">
+          <div className="w-full grid desktop:grid-cols-2 p-6">
             <div className="grid w-full p-6 desktop:col-[2/3] bg-white rounded-lg">
               <button
                 type="button"
@@ -167,12 +175,19 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
                 </button>
               </div>
               <div className="">
-                <p className="flex justify-between">
-                  <span>Total</span>
-                  <span>$5325</span>
+                <p className="flex justify-between items-center">
+                  <span className="uppercase opacity-50 tracking-wider">
+                    Total
+                  </span>
+                  <span className="uppercase text-lg font-bold tracking-wide">
+                    $5325
+                  </span>
                 </p>
               </div>
-              <button type="button" className="bg-brown w-full">
+              <button
+                type="button"
+                className="text-white uppercase py-4 px-8 bg-brown font-bold hover:bg-orange focus-visible:bg-orange"
+              >
                 Checkout
               </button>
             </div>
