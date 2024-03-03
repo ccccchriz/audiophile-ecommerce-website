@@ -1,30 +1,28 @@
 import { useEffect, useRef, useState } from "react";
+import { getCart, updateCart } from "../utilities/CartFunctions.tsx";
 
 interface CartProps {
   isCartExpanded: boolean;
   setIsCartExpanded: Function;
 }
 
-interface cartType {
-  item: string;
-  amount: number;
-  price: number;
-  image: string;
-}
-
 // TEMP
-
-const data: cartType[] = [
-  {
-    item: "ZX9 Speaker",
-    amount: 1,
-    price: 4500,
-    image: "/images/product-xx59-headphones/mobile/image-product.jpg",
-  },
-];
 
 export default function Cart({ isCartExpanded, setIsCartExpanded }: CartProps) {
   const cart = useRef<HTMLDialogElement>(null);
+
+  const data = getCart();
+
+  console.log(data);
+
+  updateCart([
+    {
+      item: "ZX9 Speaker",
+      amount: 1,
+      price: 4500,
+      image: "/images/product-xx59-headphones/mobile/image-product.jpg",
+    },
+  ]);
 
   useEffect(() => {
     if (!isCartExpanded) cart.current!.close();
@@ -52,7 +50,7 @@ export default function Cart({ isCartExpanded, setIsCartExpanded }: CartProps) {
               <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
             </svg>
           </button>
-          <div className="flex">
+          <div className="flex gap-1 font-bold text-lg tracking-wider">
             <h2>CART</h2>
             <p>
               (<span>{data.length}</span>)
@@ -63,29 +61,31 @@ export default function Cart({ isCartExpanded, setIsCartExpanded }: CartProps) {
           </div>
           <div className="">
             {data.length > 0 ? (
-              data.map((el, index) => (
-                <div key={index} className="flex gap-4 items-center">
-                  <picture className="rounded-lg overflow-hidden">
-                    <img src={el.image} alt="" className="w-full max-w-16" />
-                  </picture>
-                  <div className="grow">
-                    <h2 className="font-bold">{el.item}</h2>
-                    <p className="tracking-wide font-bold opacity-50">
-                      $ {el.price}
-                    </p>
-                  </div>
+              <ul>
+                {data.map((el, index) => (
+                  <li key={index} className="flex gap-4 items-center">
+                    <picture className="rounded-lg overflow-hidden">
+                      <img src={el.image} alt="" className="w-full max-w-16" />
+                    </picture>
+                    <div className="grow">
+                      <h2 className="font-bold">{el.item}</h2>
+                      <p className="tracking-wide font-bold opacity-50">
+                        $ {el.price}
+                      </p>
+                    </div>
 
-                  <div className="flex items-center gap-2 bg-gray">
-                    <button className="py-2 px-3 font-bold  text-xl h-full disabled:opacity-35 [&:not(:disabled)]:hover:text-brown [&:not(:disabled)]:focus-visible:text-brown [&:not(:disabled)]:hover:bg-light-gray [&:not(:disabled)]:focus-visible:bg-light-gray transition-all">
-                      -
-                    </button>
-                    <p className="">{el.amount}</p>
-                    <button className="py-2 px-3 h-full font-bold hover:text-brown focus-visible:text-brown hover:bg-light-gray focus-visible:bg-light-gray transition-all ">
-                      +
-                    </button>
-                  </div>
-                </div>
-              ))
+                    <div className="flex items-center gap-2 bg-gray h-12">
+                      <button className=" px-3 font-bold  text-xl h-full disabled:opacity-35 [&:not(:disabled)]:hover:text-brown [&:not(:disabled)]:focus-visible:text-brown [&:not(:disabled)]:hover:bg-light-gray [&:not(:disabled)]:focus-visible:bg-light-gray transition-all">
+                        -
+                      </button>
+                      <p className="">{el.amount}</p>
+                      <button className=" px-3 h-full font-bold hover:text-brown focus-visible:text-brown hover:bg-light-gray focus-visible:bg-light-gray transition-all ">
+                        +
+                      </button>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             ) : (
               <h2>Cart is empty</h2>
             )}
