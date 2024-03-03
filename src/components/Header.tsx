@@ -18,7 +18,7 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
   }, [isExpanded]);
 
   return (
-    <header className="bg-black p-6 grid justify-items-center">
+    <header className="bg-black p-6 grid justify-items-center font-primary">
       <div className="flex justify-between flex-wrap max-w-[70rem] w-full">
         <button
           aria-expanded={isExpanded}
