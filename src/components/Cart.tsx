@@ -1,5 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { getCart, updateCart, cartType } from "../utilities/CartFunctions.tsx";
+import {
+  getCart,
+  updateCart,
+  cartType,
+  incrementAmount,
+  decrementAmount,
+} from "../utilities/CartFunctions.tsx";
 
 interface CartProps {
   refresh: boolean;
@@ -93,11 +99,23 @@ export default function Cart({
                     </div>
 
                     <div className="flex items-center gap-2 bg-gray h-12">
-                      <button className=" px-3 font-bold  text-xl h-full disabled:opacity-35 [&:not(:disabled)]:hover:text-brown [&:not(:disabled)]:focus-visible:text-brown [&:not(:disabled)]:hover:bg-light-gray [&:not(:disabled)]:focus-visible:bg-light-gray transition-all">
+                      <button
+                        onClick={() => {
+                          decrementAmount(index);
+                          setRefresh((v: boolean) => !v);
+                        }}
+                        className=" px-3 font-bold  text-xl h-full disabled:opacity-35 [&:not(:disabled)]:hover:text-brown [&:not(:disabled)]:focus-visible:text-brown [&:not(:disabled)]:hover:bg-light-gray [&:not(:disabled)]:focus-visible:bg-light-gray transition-all"
+                      >
                         -
                       </button>
                       <p className="">{el.amount}</p>
-                      <button className=" px-3 h-full font-bold hover:text-brown focus-visible:text-brown hover:bg-light-gray focus-visible:bg-light-gray transition-all ">
+                      <button
+                        onClick={() => {
+                          incrementAmount(index);
+                          setRefresh((v: boolean) => !v);
+                        }}
+                        className=" px-3 h-full font-bold hover:text-brown focus-visible:text-brown hover:bg-light-gray focus-visible:bg-light-gray transition-all "
+                      >
                         +
                       </button>
                     </div>

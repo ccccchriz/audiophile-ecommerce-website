@@ -12,7 +12,10 @@ export function getCart() {
 }
 
 export function updateCart(newCart: cartType[]) {
-  localStorage.setItem("cart", JSON.stringify(newCart));
+  localStorage.setItem(
+    "cart",
+    JSON.stringify(newCart.filter((el) => el.amount > 0))
+  );
 }
 
 export function addProduct(
@@ -30,4 +33,18 @@ export function addProduct(
     data.push({ item, amount, price, image });
   }
   updateCart(data);
+}
+
+export function decrementAmount(index: number) {
+  let data = getCart();
+  updateCart(
+    data.map((el, i) => (i == index ? { ...el, amount: el.amount - 1 } : el))
+  );
+}
+
+export function incrementAmount(index: number) {
+  let data = getCart();
+  updateCart(
+    data.map((el, i) => (i == index ? { ...el, amount: el.amount + 1 } : el))
+  );
 }
