@@ -7,6 +7,7 @@ import {
 import AdCard from "../components/AdCard";
 import dataType from "../utilities/dataType";
 import { useEffect, useState } from "react";
+import { addProduct } from "../utilities/CartFunctions";
 
 export default function Product() {
   const data = useRouteLoaderData("root") as dataType;
@@ -67,7 +68,12 @@ export default function Product() {
                       +
                     </button>
                   </div>
-                  <button className="bg-brown text-white py-4 px-8 hover:bg-orange focus-visible:bg-orange">
+                  <button
+                    onClick={() =>
+                      addProduct(el.name, amount, el.price, el.image.mobile)
+                    }
+                    className="bg-brown text-white py-4 px-8 hover:bg-orange focus-visible:bg-orange"
+                  >
                     Add to Cart
                   </button>
                 </div>

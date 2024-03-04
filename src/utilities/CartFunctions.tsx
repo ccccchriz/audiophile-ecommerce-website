@@ -1,4 +1,4 @@
-interface cartType {
+export interface cartType {
   item: string;
   amount: number;
   price: number;
@@ -7,12 +7,27 @@ interface cartType {
 
 export function getCart() {
   let data = localStorage.getItem("cart");
-  console.log(data);
   if (data == null) return [];
-  return JSON.parse(data);
+  return JSON.parse(data) as cartType[];
 }
 
 export function updateCart(newCart: cartType[]) {
-  newCart.filter((el) => el.amount > 0);
   localStorage.setItem("cart", JSON.stringify(newCart));
+}
+
+export function addProduct(
+  item: string,
+  amount: number,
+  price: number,
+  image: string
+) {
+  let data = getCart();
+  if (data.filter((el) => el.item == item).length > 0) {
+    data = data.map((el) =>
+      el.item == item ? { item, amount: amount + el.amount, price, image } : el
+    );
+  } else {
+    data.push({ item, amount, price, image });
+  }
+  updateCart(data);
 }

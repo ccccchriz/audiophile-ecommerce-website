@@ -11,6 +11,8 @@ type HeaderProps = {
 export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
   const dialog = useRef<HTMLDialogElement>(null);
 
+  const [refresh, setRefresh] = useState<boolean>(true);
+
   const [isCartExpanded, setIsCartExpanded] = useState<boolean>(false);
 
   useEffect(() => {
@@ -84,7 +86,10 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
 
         <button
           type="button"
-          onClick={() => setIsCartExpanded(true)}
+          onClick={() => {
+            setIsCartExpanded(true);
+            setRefresh((v) => !v);
+          }}
           className="group"
         >
           <svg
@@ -141,6 +146,8 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
         <Cart
           isCartExpanded={isCartExpanded}
           setIsCartExpanded={setIsCartExpanded}
+          refresh={refresh}
+          setRefresh={setRefresh}
         />
       </div>
     </header>

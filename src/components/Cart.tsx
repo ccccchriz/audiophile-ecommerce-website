@@ -1,28 +1,28 @@
 import { useEffect, useRef, useState } from "react";
-import { getCart, updateCart } from "../utilities/CartFunctions.tsx";
+import { getCart, updateCart, cartType } from "../utilities/CartFunctions.tsx";
 
 interface CartProps {
+  refresh: boolean;
+  setRefresh: Function;
   isCartExpanded: boolean;
   setIsCartExpanded: Function;
 }
 
 // TEMP
 
-export default function Cart({ isCartExpanded, setIsCartExpanded }: CartProps) {
+export default function Cart({
+  refresh,
+  setRefresh,
+  isCartExpanded,
+  setIsCartExpanded,
+}: CartProps) {
   const cart = useRef<HTMLDialogElement>(null);
 
-  const data = getCart();
+  const [data, setData] = useState<cartType[]>(getCart());
 
-  console.log(data);
-
-  updateCart([
-    {
-      item: "ZX9 Speaker",
-      amount: 1,
-      price: 4500,
-      image: "/images/product-xx59-headphones/mobile/image-product.jpg",
-    },
-  ]);
+  useEffect(() => {
+    setData(getCart());
+  }, [refresh]);
 
   useEffect(() => {
     if (!isCartExpanded) cart.current!.close();
@@ -55,7 +55,15 @@ export default function Cart({ isCartExpanded, setIsCartExpanded }: CartProps) {
             <p>
               (<span>{data.length}</span>)
             </p>
-            <button type="button" className="ml-auto">
+            <button
+              type="button"
+              className="ml-auto disabled:opacity-25"
+              onClick={() => {
+                updateCart([]);
+                setRefresh((v: boolean) => !v);
+              }}
+              disabled={data.length < 1 ? true : undefined}
+            >
               Remove All
             </button>
           </div>
@@ -87,20 +95,21 @@ export default function Cart({ isCartExpanded, setIsCartExpanded }: CartProps) {
                 ))}
               </ul>
             ) : (
-              <h2>Cart is empty</h2>
+              <h3 className="opacity-50">Cart is empty</h3>
             )}
           </div>
           <div className="">
             <p className="flex justify-between items-center">
               <span className="uppercase opacity-50 tracking-wider">Total</span>
               <span className="uppercase text-lg font-bold tracking-wide">
-                ${data.reduce((a, b) => a + b.price, 0)}
+                ${data.reduce((a, b) => a + b.price * b.amount, 0)}
               </span>
             </p>
           </div>
           <button
             type="button"
-            className="text-white uppercase py-4 px-8 bg-brown font-bold hover:bg-orange focus-visible:bg-orange"
+            className="text-white uppercase py-4 px-8 bg-brown font-bold hover:bg-orange focus-visible:bg-orange disabled:bg-brown disabled:opacity-50"
+            disabled={data.length < 1 ? true : undefined}
           >
             Checkout
           </button>
