@@ -30,9 +30,19 @@ export default function Cart({
   }, [isCartExpanded]);
 
   return (
-    <dialog ref={cart} className="mt-24 max-w-[70rem] bg-[transparent] w-full">
+    <dialog
+      ref={cart}
+      className="mt-24 max-w-[70rem] bg-[transparent] w-full"
+      onClick={() => {
+        cart.current!.close();
+        setIsCartExpanded((v: boolean) => !v);
+      }}
+    >
       <div className="w-full grid desktop:grid-cols-2 p-6">
-        <div className="grid gap-6 w-full p-6 desktop:col-[2/3] bg-white rounded-lg">
+        <div
+          className="grid gap-6 w-full p-6 desktop:col-[2/3] bg-white rounded-lg"
+          onClick={(e) => e.stopPropagation()}
+        >
           <button
             type="button"
             onClick={() => {

@@ -104,44 +104,56 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
             />
           </svg>
         </button>
-        <dialog ref={dialog} className={`desktop:hidden w-full p-4 rounded-lg`}>
-          <button
-            type="button"
-            onClick={() => {
-              dialog.current!.close();
-              setIsExpanded((v: boolean) => !v);
-            }}
-            className="p-3 w-12 group self-end ml-auto"
+        <dialog
+          ref={dialog}
+          className={`w-full`}
+          onClick={() => {
+            dialog.current!.close();
+            setIsExpanded((v: boolean) => !v);
+          }}
+        >
+          <div
+            className="desktop:hidden w-full p-4 rounded-lg"
+            onClick={(e) => e.stopPropagation()}
           >
-            <div className="sr-only">Close menu</div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 384 512"
-              className="group-hover:fill-brown group-focus-visible:fill-brown"
+            <button
+              type="button"
+              onClick={() => {
+                dialog.current!.close();
+                setIsExpanded((v: boolean) => !v);
+              }}
+              className="p-3 w-12 group self-end ml-auto"
             >
-              <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-            </svg>
-          </button>
-          <ul>
-            <li>
-              <CategoryCard
-                title="headphones"
-                image="/images/shared/desktop/image-category-thumbnail-headphones.png"
-              />
-            </li>
-            <li>
-              <CategoryCard
-                title="speakers"
-                image="/images/shared/desktop/image-category-thumbnail-speakers.png"
-              />
-            </li>
-            <li>
-              <CategoryCard
-                title="earphones"
-                image="/images/shared/desktop/image-category-thumbnail-earphones.png"
-              />
-            </li>
-          </ul>
+              <div className="sr-only">Close menu</div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 384 512"
+                className="group-hover:fill-brown group-focus-visible:fill-brown"
+              >
+                <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+              </svg>
+            </button>
+            <ul>
+              <li>
+                <CategoryCard
+                  title="headphones"
+                  image="/images/shared/desktop/image-category-thumbnail-headphones.png"
+                />
+              </li>
+              <li>
+                <CategoryCard
+                  title="speakers"
+                  image="/images/shared/desktop/image-category-thumbnail-speakers.png"
+                />
+              </li>
+              <li>
+                <CategoryCard
+                  title="earphones"
+                  image="/images/shared/desktop/image-category-thumbnail-earphones.png"
+                />
+              </li>
+            </ul>
+          </div>
         </dialog>
         <Cart
           isCartExpanded={isCartExpanded}
