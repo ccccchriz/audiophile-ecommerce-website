@@ -38,7 +38,7 @@ export default function Cart({
   return (
     <dialog
       ref={cart}
-      className="mt-24 max-w-[70rem] bg-[transparent] w-full"
+      className="mt-24 max-w-[70rem] bg-[transparent] w-full backdrop:bg-black backdrop:opacity-50"
       onClick={() => {
         cart.current!.close();
         setIsCartExpanded((v: boolean) => !v);

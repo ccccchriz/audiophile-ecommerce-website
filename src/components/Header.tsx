@@ -106,7 +106,7 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
         </button>
         <dialog
           ref={dialog}
-          className={`w-full`}
+          className={`w-full backdrop:bg-black backdrop:opacity-50`}
           onClick={() => {
             dialog.current!.close();
             setIsExpanded((v: boolean) => !v);
