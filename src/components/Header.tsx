@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import CategoryCard from "./CategoryCard";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Cart from "./Cart";
 
 type HeaderProps = {
@@ -14,6 +14,12 @@ export default function Header({ isExpanded, setIsExpanded }: HeaderProps) {
   const [refresh, setRefresh] = useState<boolean>(true);
 
   const [isCartExpanded, setIsCartExpanded] = useState<boolean>(false);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsCartExpanded((_: boolean) => false);
+  }, [location]);
 
   useEffect(() => {
     if (!isExpanded) dialog.current!.close();

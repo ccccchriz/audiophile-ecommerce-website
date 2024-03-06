@@ -4,6 +4,7 @@ import Catergory from "./pages/Category";
 import Product from "./pages/Product";
 import MainLayout from "./layouts/MainLayout";
 import dataType from "./utilities/dataType";
+import Checkout from "./pages/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "product/:product",
         element: <Product />,
+      },
+      {
+        path: "checkout",
+        element: <Checkout />,
       },
 
       {

@@ -6,6 +6,7 @@ import {
   incrementAmount,
   decrementAmount,
 } from "../utilities/CartFunctions.tsx";
+import { Link } from "react-router-dom";
 
 interface CartProps {
   refresh: boolean;
@@ -134,13 +135,16 @@ export default function Cart({
               </span>
             </p>
           </div>
-          <button
-            type="button"
-            className="text-white uppercase py-4 px-8 bg-brown font-bold hover:bg-orange focus-visible:bg-orange disabled:bg-brown disabled:opacity-50"
-            disabled={data.length < 1 ? true : undefined}
+          <Link
+            to={"/checkout"}
+            className={`${
+              data.length < 1
+                ? "pointer-events-none opacity-50"
+                : "hover:bg-orange focus-visible:bg-orange "
+            } text-center text-white uppercase py-4 px-8 font-bold bg-brown `}
           >
             Checkout
-          </button>
+          </Link>
         </div>
       </div>
     </dialog>
