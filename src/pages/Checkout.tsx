@@ -1,39 +1,84 @@
 export default function Checkout() {
   return (
-    <div className="">
-      <div className="">
-        <form className="">
-          <h2>Checkout</h2>
-          <h3>Billing details</h3>
-          <div className="">
-            <label htmlFor="">Name</label>
-            <input type="text" />
-            <label htmlFor="">Email Address</label>
-            <input type="email" />
-            <label htmlFor="">Phone Number</label>
-            <input type="text" />
+    <div className="p-16  w-full">
+      <div className=" w-full ">
+        <form className="bg-white p-6 rounded-lg grid gap-4 w-full">
+          <h2 className="font-bold text-3xl uppercase">Checkout</h2>
+          <h3 className="text-brown font-bold uppercase">Billing details</h3>
+          <div className="grid gap-2">
+            <label htmlFor="" className="font-bold text-sm">
+              Name
+            </label>
+            <input
+              type="text"
+              className="border-gray border rounded-lg py-4 px-6"
+            />
+            <label htmlFor="" className="font-bold text-sm">
+              Email Address
+            </label>
+            <input
+              type="email"
+              className="border-gray border rounded-lg py-4 px-6"
+            />
+            <label htmlFor="" className="font-bold text-sm">
+              Phone Number
+            </label>
+            <input
+              type="text"
+              className="border-gray border rounded-lg py-4 px-6"
+            />
           </div>
-          <h3>Shipping info</h3>
-          <div className="">
-            <label htmlFor="">Your Address</label>
-            <input type="text" />
-            <label htmlFor="">ZIP Code</label>
-            <input type="text" />
-            <label htmlFor="">City</label>
-            <input type="text" />
-            <label htmlFor="">Country</label>
-            <input type="text" />
+          <h3 className="text-brown font-bold uppercase">Shipping info</h3>
+          <div className="grid gap-2">
+            <label htmlFor="" className="font-bold text-sm">
+              Your Address
+            </label>
+            <input
+              type="text"
+              className="border-gray border rounded-lg py-4 px-6"
+            />
+            <label htmlFor="" className="font-bold text-sm">
+              ZIP Code
+            </label>
+            <input
+              type="text"
+              className="border-gray border rounded-lg py-4 px-6"
+            />
+            <label htmlFor="" className="font-bold text-sm">
+              City
+            </label>
+            <input
+              type="text"
+              className="border-gray border rounded-lg py-4 px-6"
+            />
+            <label htmlFor="" className="font-bold text-sm">
+              Country
+            </label>
+            <input
+              type="text"
+              className="border-gray border rounded-lg py-4 px-6"
+            />
           </div>
-          <h3>Payment details</h3>
-          <div className="">
+          <h3 className="text-brown font-bold uppercase">Payment details</h3>
+          <div className="grid gap-2">
             <label htmlFor="">e-Money</label>
             <input type="radio" />
             <label htmlFor="">Cash on Delivery</label>
             <input type="radio" />
-            <label htmlFor="">e-Money Number</label>
-            <input type="text" />
-            <label htmlFor="">e-Money PIN</label>
-            <input type="text" />
+            <label htmlFor="" className="font-bold text-sm">
+              e-Money Number
+            </label>
+            <input
+              type="text"
+              className="border-gray border rounded-lg py-4 px-6"
+            />
+            <label htmlFor="" className="font-bold text-sm">
+              e-Money PIN
+            </label>
+            <input
+              type="text"
+              className="border-gray border rounded-lg py-4 px-6"
+            />
           </div>
         </form>
       </div>

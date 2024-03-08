@@ -19,7 +19,7 @@ export default function MainLayout(/*{ children }: MainLayoutProps*/) {
       <ScrollRestoration />
       <Header isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
       <main
-        className="font-primary grow grid place-items-center"
+        className="font-primary grow grid place-items-center bg-light-gray"
         {...{ inert: isExpanded ? "" : null }}
       >
         <h1 className="sr-only">Audiophile Store</h1>
