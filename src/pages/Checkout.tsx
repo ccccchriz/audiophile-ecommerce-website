@@ -64,10 +64,33 @@ export default function Checkout() {
           </div>
           <h3 className="text-brown font-bold uppercase">Payment details</h3>
           <div className="grid gap-2">
-            <label htmlFor="">e-Money</label>
-            <input type="radio" />
-            <label htmlFor="">Cash on Delivery</label>
-            <input type="radio" />
+            <label
+              htmlFor="emoney"
+              className="border-gray border rounded-lg py-4 px-6 font-bold flex gap-4 items-center"
+            >
+              <input
+                type="radio"
+                id="emoney"
+                name="payment"
+                defaultChecked
+                className="flex appearance-none size-5 border border-black border-opacity-30 rounded-full checked:before:bg-brown before:w-full before:rounded-full p-1"
+              />
+              e-Money
+            </label>
+
+            <label
+              htmlFor="cash"
+              className="border-gray border rounded-lg py-4 px-6 font-bold flex gap-4 items-center"
+            >
+              <input
+                type="radio"
+                id="cash"
+                name="payment"
+                className="flex appearance-none size-5 border border-black border-opacity-30 rounded-full checked:before:bg-brown before:w-full before:rounded-full p-1"
+              />
+              Cash on Delivery
+            </label>
+
             <label htmlFor="" className="label-primary">
               e-Money Number
             </label>

@@ -28,6 +28,6 @@
     @apply font-bold text-sm;
   }
   .input-primary {
-    @apply border-gray border rounded-lg py-4 px-6 font-bold text-black placeholder:text-opacity-40;
+    @apply border-gray border rounded-lg py-4 px-6 font-bold text-black placeholder:text-opacity-40 placeholder:text-black;
   }
 }
