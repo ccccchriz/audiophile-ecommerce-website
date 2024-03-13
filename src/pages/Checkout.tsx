@@ -140,7 +140,7 @@ export default function Checkout() {
           </div>
         </form>
       </div>
-      <div className="bg-white py-8 px-6">
+      <div className="bg-white py-8 px-6 grid gap-6">
         <h2 className="text-lg font-bold uppercase tracking-widest">Summary</h2>
         <ul className="grid gap-6">
           {data.map((el, index) => (
@@ -154,26 +154,34 @@ export default function Checkout() {
                   $ {el.price}
                 </p>
               </div>
-              <div className="">x{el.amount}</div>
+              <div className="opacity-50 font-bold">x{el.amount}</div>
             </li>
           ))}
         </ul>
-        <div className="">
-          <div className="">
-            <h3>Total</h3>
-            <p>
+        <div className="grid gap-2">
+          <div className="flex justify-between">
+            <h3 className="text-sm uppercase opacity-50 tracking-wide">
+              Total
+            </h3>
+            <p className="font-bold text-lg">
+              ${" "}
               {Math.floor(
                 data.reduce((a, b) => a + b.price * b.amount, 0) / 1.23
               )}
             </p>
           </div>
-          <div className="">
-            <h3>Shipping</h3>
-            <p>50</p>
+          <div className="flex justify-between">
+            <h3 className="text-sm uppercase opacity-50 tracking-wide">
+              Shipping
+            </h3>
+            <p className="font-bold text-lg">$ 50</p>
           </div>
-          <div className="">
-            <h3>Vat (included)</h3>
-            <p>
+          <div className="flex justify-between">
+            <h3 className="text-sm uppercase opacity-50 tracking-wide">
+              Vat (included)
+            </h3>
+            <p className="font-bold text-lg">
+              ${" "}
               {data.reduce((a, b) => a + b.price * b.amount, 0) -
                 Math.floor(
                   data.reduce((a, b) => a + b.price * b.amount, 0) / 1.23
@@ -181,9 +189,13 @@ export default function Checkout() {
             </p>
           </div>
         </div>
-        <div className="">
-          <h3>Grand Total</h3>
-          <p>{data.reduce((a, b) => a + b.price * b.amount, 0) + 50}</p>
+        <div className="flex justify-between">
+          <h3 className="text-sm uppercase opacity-50 tracking-wide">
+            Grand Total
+          </h3>
+          <p className="font-bold text-lg text-brown">
+            $ {data.reduce((a, b) => a + b.price * b.amount, 0) + 50}
+          </p>
         </div>
         <button className="hover:bg-orange focus-visible:bg-orange text-center text-white uppercase py-4 px-8 font-bold bg-brown tracking-widest w-full">
           Continue & Pay
