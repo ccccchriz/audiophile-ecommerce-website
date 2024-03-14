@@ -5,41 +5,47 @@ export default function Checkout() {
 
   return (
     <div className="py-16 px-6 grid gap-8 w-full max-w-[70rem]">
-      <div className=" w-full ">
+      <div className=" w-full">
         <form className="bg-white p-6 rounded-lg grid gap-4 w-full">
           <h2 className="font-bold text-3xl uppercase">Checkout</h2>
           <h3 className="text-brown font-bold uppercase">Billing details</h3>
-          <div className="grid gap-2">
-            <label htmlFor="name" className="label-primary">
-              Name
-            </label>
-            <input
-              placeholder="Alexei Ward"
-              type="text"
-              className="input-primary"
-              id="name"
-              name="name"
-            />
-            <label htmlFor="mail" className="label-primary">
-              Email Address
-            </label>
-            <input
-              placeholder="alexei@mail.com"
-              type="email"
-              className="input-primary"
-              id="mail"
-              name="mail"
-            />
-            <label htmlFor="phone" className="label-primary">
-              Phone Number
-            </label>
-            <input
-              placeholder="+1 202-555-0136"
-              type="text"
-              className="input-primary"
-              id="phone"
-              name="phone"
-            />
+          <div className="grid gap-2 tablet:grid-cols-2">
+            <div className="grid gap-2">
+              <label htmlFor="name" className="label-primary">
+                Name
+              </label>
+              <input
+                placeholder="Alexei Ward"
+                type="text"
+                className="input-primary"
+                id="name"
+                name="name"
+              />
+            </div>
+            <div className="grid gap-2">
+              <label htmlFor="mail" className="label-primary">
+                Email Address
+              </label>
+              <input
+                placeholder="alexei@mail.com"
+                type="email"
+                className="input-primary"
+                id="mail"
+                name="mail"
+              />
+            </div>
+            <div className="grid gap-2">
+              <label htmlFor="phone" className="label-primary">
+                Phone Number
+              </label>
+              <input
+                placeholder="+1 202-555-0136"
+                type="text"
+                className="input-primary"
+                id="phone"
+                name="phone"
+              />
+            </div>
           </div>
           <h3 className="text-brown font-bold uppercase">Shipping info</h3>
           <div className="grid gap-2">
