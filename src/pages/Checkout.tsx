@@ -48,52 +48,60 @@ export default function Checkout() {
             </div>
           </div>
           <h3 className="text-brown font-bold uppercase">Shipping info</h3>
-          <div className="grid gap-2">
-            <label htmlFor="address" className="label-primary">
-              Your Address
-            </label>
-            <input
-              placeholder="1137 Williams Avenue"
-              type="text"
-              className="input-primary"
-              id="address"
-              name="address"
-            />
-            <label htmlFor="zipcode" className="label-primary">
-              ZIP Code
-            </label>
-            <input
-              placeholder="10001"
-              type="text"
-              className="input-primary"
-              id="zipcode"
-              name="zipcode"
-            />
-            <label htmlFor="city" className="label-primary">
-              City
-            </label>
-            <input
-              placeholder="New York"
-              type="text"
-              className="input-primary"
-              id="city"
-              name="city"
-            />
-            <label htmlFor="country" className="label-primary">
-              Country
-            </label>
-            <input
-              placeholder="United States"
-              type="text"
-              className="input-primary"
-              id="country"
-              name="country"
-            />
+          <div className="grid gap-2 tablet:grid-cols-2">
+            <div className="grid gap-2 tablet:col-[1/3]">
+              <label htmlFor="address" className="label-primary">
+                Your Address
+              </label>
+              <input
+                placeholder="1137 Williams Avenue"
+                type="text"
+                className="input-primary"
+                id="address"
+                name="address"
+              />
+            </div>
+            <div className="grid gap-2">
+              <label htmlFor="zipcode" className="label-primary">
+                ZIP Code
+              </label>
+              <input
+                placeholder="10001"
+                type="text"
+                className="input-primary"
+                id="zipcode"
+                name="zipcode"
+              />
+            </div>
+            <div className="grid gap-2">
+              <label htmlFor="city" className="label-primary">
+                City
+              </label>
+              <input
+                placeholder="New York"
+                type="text"
+                className="input-primary"
+                id="city"
+                name="city"
+              />
+            </div>
+            <div className="grid gap-2">
+              <label htmlFor="country" className="label-primary">
+                Country
+              </label>
+              <input
+                placeholder="United States"
+                type="text"
+                className="input-primary"
+                id="country"
+                name="country"
+              />
+            </div>
           </div>
           <h3 className="text-brown font-bold uppercase">Payment details</h3>
-          <div className="grid gap-2">
-            <fieldset className="grid gap-4">
-              <legend className="label-primary float-left">
+          <div className="grid gap-2 tablet:grid-cols-2">
+            <fieldset className="grid gap-4 tablet:col-[1/3] tablet:grid-cols-2">
+              <legend className="label-primary float-left tablet:row-[1/3]">
                 Payment Method
               </legend>
               <label
@@ -123,26 +131,30 @@ export default function Checkout() {
               </label>
             </fieldset>
 
-            <label htmlFor="emoney_num" className="label-primary">
-              e-Money Number
-            </label>
-            <input
-              placeholder="238521993"
-              type="number"
-              className="input-primary"
-              id="emoney_num"
-              name="emoney_num"
-            />
-            <label htmlFor="emoney-pin" className="label-primary">
-              e-Money PIN
-            </label>
-            <input
-              placeholder="6891"
-              type="number"
-              className="input-primary"
-              id="emoney-pin"
-              name="emoney-pin"
-            />
+            <div className="grid gap-2">
+              <label htmlFor="emoney_num" className="label-primary">
+                e-Money Number
+              </label>
+              <input
+                placeholder="238521993"
+                type="number"
+                className="input-primary"
+                id="emoney_num"
+                name="emoney_num"
+              />
+            </div>
+            <div className="grid gap-2">
+              <label htmlFor="emoney-pin" className="label-primary">
+                e-Money PIN
+              </label>
+              <input
+                placeholder="6891"
+                type="number"
+                className="input-primary"
+                id="emoney-pin"
+                name="emoney-pin"
+              />
+            </div>
           </div>
         </form>
       </div>
