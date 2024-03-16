@@ -4,8 +4,8 @@ export default function Checkout() {
   const data = getCart() as cartType[];
 
   return (
-    <div className="py-16 px-6 grid gap-8 w-full max-w-[70rem]">
-      <div className=" w-full">
+    <div className="py-16 px-6 grid gap-8 w-full max-w-[70rem] desktop:grid-cols-[1fr_21.875rem] desktop:grid-rows-[auto_1fr]">
+      <div className=" w-full desktop:row-[1/3]">
         <form className="bg-white p-6 rounded-lg grid gap-4 w-full">
           <h2 className="font-bold text-3xl uppercase">Checkout</h2>
           <h3 className="text-brown font-bold uppercase">Billing details</h3>
@@ -158,7 +158,7 @@ export default function Checkout() {
           </div>
         </form>
       </div>
-      <div className="bg-white py-8 px-6 grid gap-6">
+      <div className="bg-white py-8 px-6 grid gap-6 rounded-lg">
         <h2 className="text-lg font-bold uppercase tracking-widest">Summary</h2>
         <ul className="grid gap-6">
           {data.map((el, index) => (
