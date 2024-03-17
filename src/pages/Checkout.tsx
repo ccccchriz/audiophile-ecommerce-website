@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { getCart, cartType } from "../utilities/CartFunctions.tsx";
 
 export default function Checkout() {
   const data = getCart() as cartType[];
+
+  const [isEMoney, setIsEMoney] = useState<boolean>(true);
 
   return (
     <div className="py-16 px-6 grid gap-8 w-full max-w-[70rem] desktop:grid-cols-[1fr_21.875rem] desktop:grid-rows-[auto_1fr]">
@@ -113,6 +116,7 @@ export default function Checkout() {
                   id="emoney"
                   name="payment"
                   defaultChecked
+                  onInput={() => setIsEMoney(true)}
                   className="flex appearance-none size-5 border border-black border-opacity-30 rounded-full checked:before:bg-brown before:w-full before:rounded-full p-1"
                 />
                 e-Money
@@ -125,36 +129,41 @@ export default function Checkout() {
                   type="radio"
                   id="cash"
                   name="payment"
+                  onInput={() => setIsEMoney(false)}
                   className="flex appearance-none size-5 border border-black border-opacity-30 rounded-full checked:before:bg-brown before:w-full before:rounded-full p-1"
                 />
                 Cash on Delivery
               </label>
             </fieldset>
 
-            <div className="grid gap-2">
-              <label htmlFor="emoney_num" className="label-primary">
-                e-Money Number
-              </label>
-              <input
-                placeholder="238521993"
-                type="number"
-                className="input-primary"
-                id="emoney_num"
-                name="emoney_num"
-              />
-            </div>
-            <div className="grid gap-2">
-              <label htmlFor="emoney-pin" className="label-primary">
-                e-Money PIN
-              </label>
-              <input
-                placeholder="6891"
-                type="number"
-                className="input-primary"
-                id="emoney-pin"
-                name="emoney-pin"
-              />
-            </div>
+            {isEMoney && (
+              <>
+                <div className="grid gap-2">
+                  <label htmlFor="emoney_num" className="label-primary">
+                    e-Money Number
+                  </label>
+                  <input
+                    placeholder="238521993"
+                    type="number"
+                    className="input-primary"
+                    id="emoney_num"
+                    name="emoney_num"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <label htmlFor="emoney-pin" className="label-primary">
+                    e-Money PIN
+                  </label>
+                  <input
+                    placeholder="6891"
+                    type="number"
+                    className="input-primary"
+                    id="emoney-pin"
+                    name="emoney-pin"
+                  />
+                </div>
+              </>
+            )}
           </div>
         </form>
       </div>
