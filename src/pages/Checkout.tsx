@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getCart, cartType } from "../utilities/CartFunctions.tsx";
 import { useNavigate } from "react-router-dom";
 
@@ -9,8 +9,12 @@ export default function Checkout() {
 
   const [isEMoney, setIsEMoney] = useState<boolean>(true);
 
+  useEffect(() => {
+    if (data.length == 0) navigate("/");
+  });
+
   return (
-    <div className="py-16 px-6 grid gap-8 w-full max-w-[70rem] desktop:grid-cols-[1fr_21.875rem] desktop:grid-rows-[auto_auto_1fr]">
+    <div className="pb-16 pt-8 px-6 grid gap-8 w-full max-w-[70rem] desktop:grid-cols-[1fr_21.875rem] desktop:grid-rows-[auto_auto_1fr]">
       <button
         className="justify-self-start opacity-50 desktop:col-[1/3]"
         onClick={() => navigate(-1)}
