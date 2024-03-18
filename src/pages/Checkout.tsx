@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getCart, cartType } from "../utilities/CartFunctions.tsx";
 import { useNavigate } from "react-router-dom";
+import validateForm from "../utilities/validateForm.tsx";
 
 export default function Checkout() {
   const data = getCart() as cartType[];
@@ -14,7 +15,11 @@ export default function Checkout() {
   });
 
   return (
-    <div className="pb-16 pt-8 px-6 grid gap-8 w-full max-w-[70rem] desktop:grid-cols-[1fr_21.875rem] desktop:grid-rows-[auto_auto_1fr]">
+    <form
+      noValidate
+      onSubmit={(e) => validateForm(e, isEMoney)}
+      className="pb-16 pt-8 px-6 grid gap-8 w-full max-w-[70rem] desktop:grid-cols-[1fr_21.875rem] desktop:grid-rows-[auto_auto_1fr]"
+    >
       <button
         className="justify-self-start opacity-50 desktop:col-[1/3]"
         onClick={() => navigate(-1)}
@@ -22,11 +27,11 @@ export default function Checkout() {
         Go Back
       </button>
       <div className=" w-full desktop:row-[2/4]">
-        <form className="bg-white p-6 rounded-lg grid gap-4 w-full">
+        <div className="bg-white p-6 rounded-lg grid gap-4 w-full">
           <h2 className="font-bold text-3xl uppercase">Checkout</h2>
           <h3 className="text-brown font-bold uppercase">Billing details</h3>
           <div className="grid gap-2 tablet:grid-cols-2">
-            <div className="grid gap-2">
+            <div className="grid gap-2 grid-rows-[auto_auto_1fr]">
               <label htmlFor="name" className="label-primary">
                 Name
               </label>
@@ -36,9 +41,11 @@ export default function Checkout() {
                 className="input-primary"
                 id="name"
                 name="name"
+                aria-describedby="name-error"
               />
+              <div className="error-primary" id="name-error"></div>
             </div>
-            <div className="grid gap-2">
+            <div className="grid gap-2 grid-rows-[auto_auto_1fr]">
               <label htmlFor="mail" className="label-primary">
                 Email Address
               </label>
@@ -48,9 +55,11 @@ export default function Checkout() {
                 className="input-primary"
                 id="mail"
                 name="mail"
+                aria-describedby="mail-error"
               />
+              <div className="error-primary" id="mail-error"></div>
             </div>
-            <div className="grid gap-2">
+            <div className="grid gap-2 grid-rows-[auto_auto_1fr]">
               <label htmlFor="phone" className="label-primary">
                 Phone Number
               </label>
@@ -60,7 +69,9 @@ export default function Checkout() {
                 className="input-primary"
                 id="phone"
                 name="phone"
+                aria-describedby="phone-error"
               />
+              <div className="error-primary" id="phone-error"></div>
             </div>
           </div>
           <h3 className="text-brown font-bold uppercase">Shipping info</h3>
@@ -178,7 +189,7 @@ export default function Checkout() {
               </>
             )}
           </div>
-        </form>
+        </div>
       </div>
       <div className="bg-white py-8 px-6 grid gap-6 rounded-lg">
         <h2 className="text-lg font-bold uppercase tracking-widest">Summary</h2>
@@ -237,10 +248,13 @@ export default function Checkout() {
             $ {data.reduce((a, b) => a + b.price * b.amount, 0) + 50}
           </p>
         </div>
-        <button className="hover:bg-orange focus-visible:bg-orange text-center text-white uppercase py-4 px-8 font-bold bg-brown tracking-widest w-full">
+        <button
+          type="submit"
+          className="hover:bg-orange focus-visible:bg-orange text-center text-white uppercase py-4 px-8 font-bold bg-brown tracking-widest w-full"
+        >
           Continue & Pay
         </button>
       </div>
-    </div>
+    </form>
   );
 }

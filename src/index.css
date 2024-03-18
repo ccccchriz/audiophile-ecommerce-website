@@ -30,4 +30,10 @@
   .input-primary {
     @apply border-gray border rounded-lg py-4 px-6 font-bold text-black placeholder:text-opacity-40 placeholder:text-black;
   }
+  .error-primary {
+    @apply text-error font-medium text-sm;
+  }
+  .error-border {
+    @apply border-error border-2;
+  }
 }
