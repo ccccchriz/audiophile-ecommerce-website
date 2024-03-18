@@ -1,14 +1,23 @@
 import { useState } from "react";
 import { getCart, cartType } from "../utilities/CartFunctions.tsx";
+import { useNavigate } from "react-router-dom";
 
 export default function Checkout() {
   const data = getCart() as cartType[];
 
+  const navigate = useNavigate();
+
   const [isEMoney, setIsEMoney] = useState<boolean>(true);
 
   return (
-    <div className="py-16 px-6 grid gap-8 w-full max-w-[70rem] desktop:grid-cols-[1fr_21.875rem] desktop:grid-rows-[auto_1fr]">
-      <div className=" w-full desktop:row-[1/3]">
+    <div className="py-16 px-6 grid gap-8 w-full max-w-[70rem] desktop:grid-cols-[1fr_21.875rem] desktop:grid-rows-[auto_auto_1fr]">
+      <button
+        className="justify-self-start opacity-50 desktop:col-[1/3]"
+        onClick={() => navigate(-1)}
+      >
+        Go Back
+      </button>
+      <div className=" w-full desktop:row-[2/4]">
         <form className="bg-white p-6 rounded-lg grid gap-4 w-full">
           <h2 className="font-bold text-3xl uppercase">Checkout</h2>
           <h3 className="text-brown font-bold uppercase">Billing details</h3>
