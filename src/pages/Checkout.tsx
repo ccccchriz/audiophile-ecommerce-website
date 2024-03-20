@@ -42,6 +42,8 @@ export default function Checkout() {
                 id="name"
                 name="name"
                 aria-describedby="name-error"
+                data-label="Name"
+                data-format="\S+ \S+"
               />
               <div className="error-primary" id="name-error"></div>
             </div>
@@ -56,6 +58,8 @@ export default function Checkout() {
                 id="mail"
                 name="mail"
                 aria-describedby="mail-error"
+                data-label="Email Address"
+                data-format="\w+@\w+.\w+"
               />
               <div className="error-primary" id="mail-error"></div>
             </div>
@@ -70,6 +74,8 @@ export default function Checkout() {
                 id="phone"
                 name="phone"
                 aria-describedby="phone-error"
+                data-label="Phone Number"
+                data-format="^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$"
               />
               <div className="error-primary" id="phone-error"></div>
             </div>
@@ -86,7 +92,11 @@ export default function Checkout() {
                 className="input-primary"
                 id="address"
                 name="address"
+                aria-describedby="address-error"
+                data-label="Address"
+                data-format=".*"
               />
+              <div className="error-primary" id="address-error"></div>
             </div>
             <div className="grid gap-2">
               <label htmlFor="zipcode" className="label-primary">
@@ -98,7 +108,11 @@ export default function Checkout() {
                 className="input-primary"
                 id="zipcode"
                 name="zipcode"
+                aria-describedby="zipcode-error"
+                data-label="Zipcode"
+                data-format="^\d{5}$"
               />
+              <div className="error-primary" id="zipcode-error"></div>
             </div>
             <div className="grid gap-2">
               <label htmlFor="city" className="label-primary">
@@ -110,7 +124,11 @@ export default function Checkout() {
                 className="input-primary"
                 id="city"
                 name="city"
+                aria-describedby="city-error"
+                data-label="City"
+                data-format="^.*"
               />
+              <div className="error-primary" id="city-error"></div>
             </div>
             <div className="grid gap-2">
               <label htmlFor="country" className="label-primary">
@@ -122,7 +140,11 @@ export default function Checkout() {
                 className="input-primary"
                 id="country"
                 name="country"
+                aria-describedby="country-error"
+                data-label="Country"
+                data-format="^.*"
               />
+              <div className="error-primary" id="country-error"></div>
             </div>
           </div>
           <h3 className="text-brown font-bold uppercase">Payment details</h3>
@@ -172,7 +194,11 @@ export default function Checkout() {
                     className="input-primary"
                     id="emoney_num"
                     name="emoney_num"
+                    aria-describedby="emoney-num-error"
+                    data-label="e-Money Number"
+                    data-format="^\d{10}$"
                   />
+                  <div className="error-primary" id="emoney-num-error"></div>
                 </div>
                 <div className="grid gap-2">
                   <label htmlFor="emoney-pin" className="label-primary">
@@ -184,7 +210,11 @@ export default function Checkout() {
                     className="input-primary"
                     id="emoney-pin"
                     name="emoney-pin"
+                    aria-describedby="emoney-pin-error"
+                    data-label="e-Money PIN"
+                    data-format="^\d{4}$"
                   />
+                  <div className="error-primary" id="emoney-pin-error"></div>
                 </div>
               </>
             ) : (
