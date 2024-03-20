@@ -133,7 +133,7 @@ export default function Checkout() {
               </legend>
               <label
                 htmlFor="emoney"
-                className="border-gray border rounded-lg py-4 px-6 font-bold flex gap-4 items-center has-[:checked]:border-brown cursor-pointer"
+                className="border-gray border rounded-lg py-4 px-6 font-bold flex gap-4 items-center has-[:checked]:border-brown cursor-pointer has-[:hover]:border-brown"
               >
                 <input
                   type="radio"
@@ -147,7 +147,7 @@ export default function Checkout() {
               </label>
               <label
                 htmlFor="cash"
-                className="border-gray border rounded-lg py-4 px-6 font-bold flex gap-4 items-center has-[:checked]:border-brown cursor-pointer"
+                className="border-gray border rounded-lg py-4 px-6 font-bold flex gap-4 items-center has-[:checked]:border-brown cursor-pointer has-[:hover]:border-brown"
               >
                 <input
                   type="radio"
@@ -188,7 +188,7 @@ export default function Checkout() {
                 </div>
               </>
             ) : (
-              <div className="desktop:col-[1/3] flex gap-8 items-center">
+              <div className="desktop:col-[1/3] flex gap-8 items-center mt-6">
                 <svg
                   className="max-w-12 max-h-12 shrink-0"
                   xmlns="http://www.w3.org/2000/svg"
