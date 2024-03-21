@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getCart, cartType } from "../utilities/CartFunctions.tsx";
 import { useNavigate } from "react-router-dom";
 import validateForm from "../utilities/validateForm.tsx";
 
 export default function Checkout() {
   const data = getCart() as cartType[];
+
+  const live = useRef<HTMLDivElement>(null);
 
   const navigate = useNavigate();
 
@@ -17,7 +19,7 @@ export default function Checkout() {
   return (
     <form
       noValidate
-      onSubmit={(e) => validateForm(e, isEMoney)}
+      onSubmit={(e) => validateForm(e, live.current)}
       className="pb-16 pt-8 px-6 grid gap-8 w-full max-w-[70rem] desktop:grid-cols-[1fr_21.875rem] desktop:grid-rows-[auto_auto_1fr]"
     >
       <button
@@ -297,6 +299,7 @@ export default function Checkout() {
             $ {data.reduce((a, b) => a + b.price * b.amount, 0) + 50}
           </p>
         </div>
+        <div className="sr-only" aria-live="assertive" ref={live}></div>
         <button
           type="submit"
           className="hover:bg-orange focus-visible:bg-orange text-center text-white uppercase py-4 px-8 font-bold bg-brown tracking-widest w-full"
