@@ -2,11 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import { getCart, cartType } from "../utilities/CartFunctions.tsx";
 import { useNavigate } from "react-router-dom";
 import validateForm from "../utilities/validateForm.tsx";
+import ThanksModal from "../components/ThanksModal.tsx";
 
 export default function Checkout() {
   const data = getCart() as cartType[];
 
   const live = useRef<HTMLDivElement>(null);
+  const thanksModal = useRef<HTMLDialogElement>(null);
 
   const navigate = useNavigate();
 
@@ -19,7 +21,7 @@ export default function Checkout() {
   return (
     <form
       noValidate
-      onSubmit={(e) => validateForm(e, live.current)}
+      onSubmit={(e) => validateForm(e, live.current, thanksModal.current)}
       className="pb-16 pt-8 px-6 grid gap-8 w-full max-w-[70rem] desktop:grid-cols-[1fr_21.875rem] desktop:grid-rows-[auto_auto_1fr]"
     >
       <button
@@ -307,6 +309,7 @@ export default function Checkout() {
           Continue & Pay
         </button>
       </div>
+      <ThanksModal ref={thanksModal} />
     </form>
   );
 }

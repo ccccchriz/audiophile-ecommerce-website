@@ -1,7 +1,12 @@
 export default function validateForm(
   event: React.FormEvent,
-  live: HTMLDivElement | null
+  live: HTMLDivElement | null,
+  thanksModal: HTMLDialogElement | null
 ) {
+  // TEMP
+  thanksModal?.showModal();
+  //
+
   event.preventDefault();
 
   live!.textContent = "";
@@ -32,5 +37,7 @@ export default function validateForm(
 
   if (!keepGoing) {
     live!.textContent = "The form contains errors";
+  } else {
+    thanksModal?.showModal();
   }
 }
