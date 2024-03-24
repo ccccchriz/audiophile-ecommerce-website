@@ -8,6 +8,8 @@ import AdCard from "../components/AdCard";
 import dataType from "../utilities/dataType";
 import { useEffect, useState } from "react";
 import { addProduct } from "../utilities/CartFunctions";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 export default function Product() {
   const data = useRouteLoaderData("root") as dataType;
@@ -69,9 +71,12 @@ export default function Product() {
                     </button>
                   </div>
                   <button
-                    onClick={() =>
-                      addProduct(el.name, amount, el.price, el.image.mobile)
-                    }
+                    onClick={() => {
+                      addProduct(el.name, amount, el.price, el.image.mobile);
+                      toast.success("Product added to cart", {
+                        position: "bottom-right",
+                      });
+                    }}
                     className="bg-brown text-white py-4 px-8 hover:bg-orange focus-visible:bg-orange"
                   >
                     Add to Cart
@@ -171,6 +176,7 @@ export default function Product() {
         </>
       </div>
       <AdCard />
+      <ToastContainer />
     </>
   );
 }
