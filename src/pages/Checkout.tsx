@@ -18,6 +18,10 @@ export default function Checkout() {
     if (data.length == 0) navigate("/");
   });
 
+  useEffect(() => {
+    document.title = "Checkout | Audiophile e-commerce website";
+  }, []);
+
   return (
     <form
       noValidate
