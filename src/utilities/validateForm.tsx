@@ -1,3 +1,5 @@
+import { updateCart } from "./CartFunctions";
+
 export default function validateForm(
   event: React.FormEvent,
   live: HTMLDivElement | null,
@@ -35,5 +37,6 @@ export default function validateForm(
     live!.textContent = "The form contains errors";
   } else {
     thanksModal?.showModal();
+    updateCart([]);
   }
 }
