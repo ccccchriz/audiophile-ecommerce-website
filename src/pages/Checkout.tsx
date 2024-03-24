@@ -309,7 +309,12 @@ export default function Checkout() {
           Continue & Pay
         </button>
       </div>
-      <ThanksModal ref={thanksModal} />
+      <ThanksModal
+        ref={thanksModal}
+        other={data.length - 1}
+        item={data[0]}
+        total={data.reduce((a, b) => a + b.price, 50)}
+      />
     </form>
   );
 }
