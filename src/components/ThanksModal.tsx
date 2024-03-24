@@ -13,7 +13,7 @@ const ThanksModal = forwardRef(function modal(
   ref: LegacyRef<HTMLDialogElement>
 ) {
   return (
-    <dialog ref={ref} className="p-8 rounded-lg">
+    <dialog ref={ref} className="p-8 rounded-lg tablet:p-12">
       <div className="grid gap-6">
         <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fillRule="evenodd">
@@ -31,7 +31,7 @@ const ThanksModal = forwardRef(function modal(
         <p className="opacity-50">
           You will receive an email confirmation shortly.
         </p>
-        <div className="grid rounded-lg overflow-hidden">
+        <div className="grid rounded-lg overflow-hidden tablet:grid-cols-[1fr_auto]">
           <div className="bg-gray p-6">
             <div className="flex gap-4 items-center">
               <picture className="rounded-lg overflow-hidden">
@@ -51,7 +51,7 @@ const ThanksModal = forwardRef(function modal(
               </div>
             )}
           </div>
-          <div className="bg-very-dark text-white p-6 grid">
+          <div className="bg-very-dark text-white p-6 grid tablet:py-10 tablet:pr-14 gap-2 content-center">
             <h2 className="uppercase opacity-50 text-base">Grand total</h2>
             <p className="text-lg font-bold">$ {total.toString()}</p>
           </div>
