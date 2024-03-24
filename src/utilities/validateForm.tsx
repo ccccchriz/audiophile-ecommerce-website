@@ -3,10 +3,6 @@ export default function validateForm(
   live: HTMLDivElement | null,
   thanksModal: HTMLDialogElement | null
 ) {
-  // TEMP
-  thanksModal?.showModal();
-  //
-
   event.preventDefault();
 
   live!.textContent = "";
